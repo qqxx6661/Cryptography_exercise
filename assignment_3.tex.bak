@@ -54,13 +54,13 @@
 
 \title{	
 \normalfont \normalsize
-\textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
+\textsc{Jiangsu University, school or department name} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Cryptography\_exercise \\ % The assignment title
+\huge Assignment Title \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Students} % Your name
+\author{John Smith} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
@@ -74,34 +74,42 @@
 
 \section{Problem title}
 
-A disadvantage of the general monoalphabetic cipher is that both sender and receiver must commit the permuted cipher sequence to memory. A common technique for avoiding this is to use a keyword from which the cipher sequence can be generated. For example, using the keyword CIPHER, write out the keyword followed by unused letters in normal order and match this against the plaintext letters:
+\lipsum[2] % Dummy text
 
-\centerline {plain: a b c d e f g h i j k l m n o p q r s t u v w x y z}
+\begin{align}
+\begin{split}
+(x+y)^3 	&= (x+y)^2(x+y)\\
+&=(x^2+2xy+y^2)(x+y)\\
+&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
+&=x^3+3x^2y+3xy^2+y^3
+\end{split}					
+\end{align}
 
-\centerline {cipher: C I P H E R A B D F G J K L M N O Q S T U V W X Y Z}
+Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
 
-If it is felt that this process does not produce sufficient mixing, write the remaining letters on successive lines and then generate the sequence by reading down the columns:
+%------------------------------------------------
 
-\begin{center}
-C I P H E R\\
+\subsection{Heading on level 2 (subsection)}
 
-A B D F G J\\
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+\begin{align}
+A =
+\begin{bmatrix}
+A_{11} & A_{21} \\
+A_{21} & A_{22}
+\end{bmatrix}
+\end{align}
+Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
 
-K L M N O Q\\
+%------------------------------------------------
 
-S T U V W X\\
+\subsubsection{Heading on level 3 (subsubsection)}
 
-Y Z
-\end{center}
+\lipsum[3] % Dummy text
 
-This yields the sequence:
+\paragraph{Heading on level 4 (paragraph)}
 
-\centerline {C A K S Y I B L T Z P D M U H F N V E G O W R J Q X}
-
-Determine the keyword. Answer:
-
-\centerline {SPUTNIK}
-
+\lipsum[6] % Dummy text
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2

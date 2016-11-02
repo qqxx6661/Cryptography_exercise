@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  2 NOV 2016 14:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  2 NOV 2016 19:07
 entering extended mode
 **assignment_3.tex
-(E:\Mimaxuehomework\assignment_3.tex
+(E:\Cryptography_exercise\assignment_3.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (D:\CTEX\MiKTeX\tex\latex\koma-script\scrartcl.cls
@@ -404,7 +404,7 @@ les
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
 )
-(E:\Mimaxuehomework\assignment_3.aux)
+(E:\Cryptography_exercise\assignment_3.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
@@ -486,39 +486,26 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 79.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 79.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 79.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 79.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 79.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 79.
- [1
-
-
-]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 124
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 116
 .
 
 (D:\CTEX\MiKTeX\tex\latex\fourier\ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 126.
- [2]
-(E:\Mimaxuehomework\assignment_3.aux) ) 
-Here is how much of TeX's memory you used:
- 3801 strings out of 495355
- 50998 string characters out of 3183881
- 212922 words of memory out of 3000000
- 6915 multiletter control sequences out of 15000+200000
- 88117 words of font info for 78 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 35i,14n,47p,251b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+) [1
 
-Output written on assignment_3.dvi (2 pages, 6556 bytes).
+
+]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 118.
+ [2]
+(E:\Cryptography_exercise\assignment_3.aux) ) 
+Here is how much of TeX's memory you used:
+ 3775 strings out of 495355
+ 50657 string characters out of 3183881
+ 209922 words of memory out of 3000000
+ 6891 multiletter control sequences out of 15000+200000
+ 69513 words of font info for 55 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 35i,10n,47p,412b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on assignment_3.dvi (2 pages, 3704 bytes).
