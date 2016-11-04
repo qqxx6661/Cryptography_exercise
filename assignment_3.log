@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  2 NOV 2016 19:07
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  4 NOV 2016 15:46
 entering extended mode
 **assignment_3.tex
-(E:\Cryptography_exercise\assignment_3.tex
+(E:\万爱兰1-6\assignment_3.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (D:\CTEX\MiKTeX\tex\latex\koma-script\scrartcl.cls
@@ -404,7 +404,7 @@ les
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
 )
-(E:\Cryptography_exercise\assignment_3.aux)
+(E:\万爱兰1-6\assignment_3.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
@@ -420,16 +420,14 @@ LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 67.
 LaTeX Font Info:    Try loading font information for FML+futm on input line 67.
 
-
-(D:\CTEX\MiKTeX\tex\latex\fourier\fmlfutm.fd
+ (D:\CTEX\MiKTeX\tex\latex\fourier\fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 67.
 LaTeX Font Info:    Try loading font information for FMS+futm on input line 67.
 
-
-(D:\CTEX\MiKTeX\tex\latex\fourier\fmsfutm.fd
+ (D:\CTEX\MiKTeX\tex\latex\fourier\fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
 LaTeX Font Info:    ... okay on input line 67.
@@ -486,26 +484,114 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 116
-.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 74.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 74.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 74.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 74.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 74.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 74.
 
-(D:\CTEX\MiKTeX\tex\latex\fourier\ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-) [1
+Overfull \hbox (2.6718pt too wide) in paragraph at lines 72--78
+[]\T1/futs/m/n/10.95 .
+ []
 
 
-]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 118.
- [2]
-(E:\Cryptography_exercise\assignment_3.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 72--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--119
+
+ []
+
+[1
+
+
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 126--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--155
+
+ []
+
+[3] [4] (E:\万爱兰1-6\assignment_3.aux) ) 
 Here is how much of TeX's memory you used:
- 3775 strings out of 495355
- 50657 string characters out of 3183881
- 209922 words of memory out of 3000000
- 6891 multiletter control sequences out of 15000+200000
- 69513 words of font info for 55 fonts, out of 3000000 for 9000
+ 3759 strings out of 495355
+ 50370 string characters out of 3183881
+ 213922 words of memory out of 3000000
+ 6882 multiletter control sequences out of 15000+200000
+ 63393 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 35i,10n,47p,412b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,11n,47p,559b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on assignment_3.dvi (2 pages, 3704 bytes).
+Output written on assignment_3.dvi (4 pages, 11008 bytes).
