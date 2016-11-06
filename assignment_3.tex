@@ -264,8 +264,43 @@ ANSWER:\\
 Although the constraint is correct,the reason given for requiring it is incorrect.What is wrong with the reason given and what is the correct reason?\\
 
 ANSWER:\\
-Taking the $e$th root mod n of a ciphertext block will always reveal the plaintext, no matter what the values of $e$ and $n$ are. In general this is a very difficult problem, and indeed is the reason why RSA is secure. The point is that, if $e$ is too small, then taking the normal integer $e$th root will be the same as taking the $e$th root mod $n$, and taking integer $e$th roots is relatively easy.
+Taking the $e$th root mod n of a ciphertext block will always reveal the plaintext, no matter what the values of $e$ and $n$ are. In general this is a very difficult problem, and indeed is the reason why RSA is secure. The point is that, if $e$ is too small, then taking the normal integer $e$th root will be the same as taking the $e$th root mod $n$, and taking integer $e$th roots is relatively easy.\\
 
-%----------------------------------------------------------------------------------------
+
+
+\textbf{16.} compute ${3^{19935}}\bmod$ 77\\
+\[\begin{array}{l}
+n = 11*7\\
+\varphi (n) = 10*6 = 60\\
+{a^{\varphi (n)}} = 1\bmod n\\
+{3^{19935}}\bmod 77 = {3^{332*60 + 15}}\bmod 77 = 1*{3^{15}}\bmod 77 = 34
+\end{array}\]
+%\end{split}					
+%\end{align}
+
+
+
+
+\textbf{17.} Let the two communication sides use the RSA encryption system, the receiver's public key is (5,35), the received cipher text is 10, seeking the clear text.
+%\begin{align}
+\[\begin{array}{l}
+e = 5,n = 35,c = 10\\
+\varphi (n) = \varphi (35) = \varphi (5)\varphi (7) = 4*6 = 24\\
+d = {e^{ - 1}}\bmod \varphi (n) = {5^{ - 1}}\bmod 24 = 5\\
+m = {c^d}\bmod n = {10^5}\bmod 35 = 5
+\end{array}\]
+%\end{align}
+
+
+
+\textbf{18.} Determine gcd(24140, 16762).
+\[\begin{array}{l}
+gcd\left( {24140,{\rm{ }}16762} \right){\rm{ }} = {\rm{ }}gcd\left( {16762,{\rm{ }}7378} \right){\rm{ }}\\
+ = {\rm{ }}gcd\left( {7378,{\rm{ }}2006} \right){\rm{ }} = {\rm{ }}gcd\left( {2006,{\rm{ }}1360} \right){\rm{ }}\\
+ = {\rm{ }}gcd\left( {1360,{\rm{ }}646} \right){\rm{ }} = {\rm{ }}gcd{\rm{ }}\left( {646,{\rm{ }}68} \right){\rm{ }}\\
+ = {\rm{ }}gcd\left( {68,{\rm{ }}34} \right){\rm{ }} = {\rm{ }}gcd\left( {34,{\rm{ }}0} \right){\rm{ }}\\
+ = {\rm{ }}34
+\end{array}\]
+
 
 \end{document}
