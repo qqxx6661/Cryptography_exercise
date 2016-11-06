@@ -67,12 +67,20 @@
 \begin{document}
 
 \maketitle % Print the title
-1.A generalization of the Caesar cipher, known as the affine Caesar cipher, has the following form: For each plaintext letter p , substitute the ciphertext letter C:\\
+
+
+1. A generalization of the Caesar cipher, known as the affine Caesar cipher, has the following form: For each plaintext letter p , substitute the ciphertext letter C:\\
+
 \centerline{C = E([a, b], p) = (ap + b) mod 26}.
+
 A basic requirement of any encryption algorithm is that it be one-to-one. That is, if p$\not\equiv$q,then E(k,p)$\not\equiv$E(k,q) . Otherwise, decryption is impossible, because more than one plaintext character maps into the same ciphertext character. The affine Caesar cipher is not one-to-one for all values of a. For example, for a=2 and b=3,then E([a,b],0)=E([a,b],13)=3.
+
 a. Are there any limitations on the value of b Explain why or why not.
+
 b. Determine which values of are not allowed.
-c. Provide a general statement of which values of a are and are not allowed. Justify your statement.\\
+
+c. Provide a general statement of which values of a are and are not allowed. Justify your statement.
+
 
 
 ANSWER:a.No. A change in the value of b shifts the relationship between plaintext letters and ciphertext letters to the left or right uniformly, so that if the mapping is one-to-one it remains one-to-one.
@@ -82,7 +90,7 @@ c.The values of a and 26 must have no common positive integer factor other than 
 2.Suppose that a and 26 have a common factor k>1. Then E(a,p)=E(a,q), if q=p+m/k$\not\equiv$p.\\
 \\
 \\
-2.A ciphertext has been generated with an affine cipher.The most frequent letter of the ciphertext is B, and the second most frequent letter of the ciphertext is U. Break this code.\\
+2. A ciphertext has been generated with an affine cipher.The most frequent letter of the ciphertext is B, and the second most frequent letter of the ciphertext is U. Break this code.\\
 
 ANSWER:Assume that the most frequent plaintext letter is e and the second most frequent letter is t. Note that the numerical values are e = 4; B = 1; t = 19; U = 20. Then we have the following equations:\\
 	\centerline{1 = (4a + b) mod 26}\\
@@ -91,7 +99,7 @@ ANSWER:Assume that the most frequent plaintext letter is e and the second most f
 	Then 1 = (12 + b) mod 26. By observation, b = 15.\\
 \\
 \\
-3.One way to solve the key distribution problem is to use a line from a book that both the sender and the receiver possess. Typically, at least in spy novels, the first sentence of a book serves as the key. The particular scheme discussed in this problem is from one of the best suspense novels involving secret codes, Talking to Strange Men, by Ruth Rendell. Work this problem without consulting that book!Consider the following message:\\
+3. One way to solve the key distribution problem is to use a line from a book that both the sender and the receiver possess. Typically, at least in spy novels, the first sentence of a book serves as the key. The particular scheme discussed in this problem is from one of the best suspense novels involving secret codes, Talking to Strange Men, by Ruth Rendell. Work this problem without consulting that book!Consider the following message:\\
 \centerline{SIDKHKDM AF HCRKIABIE SHIMC KD LFEAILA}\\
 This ciphertext was produced using the first sentence of The Other Side of Silence(a book about the spy Kim Philby):The snow lay thick on the steps and the snowflakes driven by the wind looked black in the headlights of the cars.\\
 A simple substitution cipher was used.\\
@@ -106,14 +114,14 @@ plaintext:   basilisk to leviathan blake is contact\\
 	c.	The last sentence may not contain all the letters of the alphabet. If the first sentence is used, the second and subsequent sentences may also be used until all 26 letters are encountered.\\
 \\
 \\
-4.Using the Vigenère cipher, encrypt the word “explanation” using the key leg.\\
+4. Using the Vigenère cipher, encrypt the word “explanation” using the key leg.\\
 \\
 ANSWER:key:	legleglegle\\
     plaintext:	explanation\\
 	ciphertext:	PBVWETLXOZR\\
 \\
 \\
-5.It can be shown that the Hill cipher with the matrix
+5. It can be shown that the Hill cipher with the matrix
 \begin{equation}       %开始数学环境
 \left(                 %左括号
   \begin{array}{cc}   %该矩阵一共2列，每一列都居中放置
@@ -145,7 +153,7 @@ ANSWER:\\
 	i.157248\\
 \\
 \\
-6.Consider a Feistel cipher composed of sixteen rounds with a block length of 128 bits and a key length of 128 bits. Suppose that, for a given k,the key scheduling algorithm determines values for the first eight round keys,k1,k2 and then sets:\\
+6. Consider a Feistel cipher composed of sixteen rounds with a block length of 128 bits and a key length of 128 bits. Suppose that, for a given k,the key scheduling algorithm determines values for the first eight round keys,k1,k2 and then sets:\\
 \centerline{k9=k8,k10=k7,k11=k6.....k16=k1}\\
 Suppose you have a ciphertext c. Explain how, with access to an encryption oracle,you can decrypt c and determine m using just a single oracle query. This shows that such a cipher is vulnerable to a chosen plaintext attack. (An encryption oracle can be thought of as a device that, when given a plaintext, returns the corresponding ciphertext. The internal details of the device are not known to you and you cannot break open the device. You can only gain information from the oracle by making queries to it and observing its responses.)\\
 \\
