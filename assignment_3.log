@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  2 NOV 2016 14:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.10.26)  6 NOV 2016 18:18
 entering extended mode
 **assignment_3.tex
-(E:\Mimaxuehomework\assignment_3.tex
+(E:\Cryptography_exercise\assignment_3.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (D:\CTEX\MiKTeX\tex\latex\koma-script\scrartcl.cls
@@ -404,7 +404,7 @@ les
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
 )
-(E:\Mimaxuehomework\assignment_3.aux)
+(E:\Cryptography_exercise\assignment_3.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
@@ -486,39 +486,211 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 79.
+(Font)              scaled to size 10.07397pt on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 79.
+(Font)              scaled to size 7.63599pt on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 79.
+(Font)              scaled to size 5.51999pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 79.
+(Font)              scaled to size 10.07397pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 79.
+(Font)              scaled to size 7.63599pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 79.
- [1
+(Font)              scaled to size 5.51999pt on input line 76.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[1
 
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 124
-.
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
 
-(D:\CTEX\MiKTeX\tex\latex\fourier\ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
-)
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 126.
- [2]
-(E:\Mimaxuehomework\assignment_3.aux) ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 134--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--162
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 163--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 186--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--215
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--241
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 242--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+[7] [8] (E:\Cryptography_exercise\assignment_3.aux) ) 
 Here is how much of TeX's memory you used:
- 3801 strings out of 495355
- 50998 string characters out of 3183881
- 212922 words of memory out of 3000000
- 6915 multiletter control sequences out of 15000+200000
- 88117 words of font info for 78 fonts, out of 3000000 for 9000
+ 3765 strings out of 495355
+ 50514 string characters out of 3183881
+ 213922 words of memory out of 3000000
+ 6886 multiletter control sequences out of 15000+200000
+ 71573 words of font info for 71 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 35i,14n,47p,251b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,11n,47p,715b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on assignment_3.dvi (2 pages, 6556 bytes).
+Output written on assignment_3.dvi (8 pages, 29628 bytes).
