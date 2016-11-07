@@ -15,7 +15,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
@@ -47,20 +47,20 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
 %----------------------------------------------------------------------------------------
-%	TITLE SECTION
+%       TITLE SECTION
 %----------------------------------------------------------------------------------------
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{	
+\title{ 
 \normalfont \normalsize
 \textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
-\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Cryptography\_exercise \\ % The assignment title
-\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+\horrule{2pt} \\[0.4cm] % Thin top horizontal rule
+\huge Exercises \\ % The assignment title
+\horrule{0.5pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Students} % Your name
+% \author{Students} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
@@ -99,10 +99,10 @@ c. The values of a and 26 must have no common positive integer factor other than
 \textbf{2.} A ciphertext has been generated with an affine cipher.The most frequent letter of the ciphertext is B, and the second most frequent letter of the ciphertext is U. Break this code.
 
 ANSWER:Assume that the most frequent plaintext letter is e and the second most frequent letter is t. Note that the numerical values are e = 4; B = 1; t = 19; U = 20. Then we have the following equations:\\
-	\centerline{1 = (4a + b) mod 26}\\
-	\centerline{20 = (19a + b) mod 26}\\
-	Thus, 19 = 15a mod 26. By trial and error, we solve: a = 3.
-	Then 1 = (12 + b) mod 26. By observation, b = 15.\\
+        \centerline{1 = (4a + b) mod 26}\\
+        \centerline{20 = (19a + b) mod 26}\\
+        Thus, 19 = 15a mod 26. By trial and error, we solve: a = 3.
+        Then 1 = (12 + b) mod 26. By observation, b = 15.\\
 \textbf{3.} One way to solve the key distribution problem is to use a line from a book that both the sender and the receiver possess. Typically, at least in spy novels, the first sentence of a book serves as the key. The particular scheme discussed in this problem is from one of the best suspense novels involving secret codes, Talking to Strange Men, by Ruth Rendell. Work this problem without consulting that book!Consider the following message:\\
 \centerline{SIDKHKDM AF HCRKIABIE SHIMC KD LFEAILA}\\
 This ciphertext was produced using the first sentence of The Other Side of Silence(a book about the spy Kim Philby):The snow lay thick on the steps and the snowflakes driven by the wind looked black in the headlights of the cars.\\
@@ -114,15 +114,15 @@ c. To make the key distribution problem simple, both parties can agree to use th
 ANSWER:a.The first letter t corresponds to A, the second letter h corresponds to B, e is C, s is D, and so on. Second and subsequent occurrences of a letter in the key sentence are ignored. The result:\\
 ciphertext:  SIDKHKDM AF HCRKIABIE SHIMC KD LFEAILA\\
 plaintext:   basilisk to leviathan blake is contact\\
-	b.	It is a monalphabetic cipher and so easily breakable.\\
-	c.	The last sentence may not contain all the letters of the alphabet. If the first sentence is used, the second and subsequent sentences may also be used until all 26 letters are encountered.\\
+        b.      It is a monalphabetic cipher and so easily breakable.\\
+        c.      The last sentence may not contain all the letters of the alphabet. If the first sentence is used, the second and subsequent sentences may also be used until all 26 letters are encountered.\\
 \\
 \\
 \textbf{4.} Using the Vigenère cipher, encrypt the word “explanation” using the key leg.\\
 \\
-ANSWER:key:	legleglegle\\
-    plaintext:	explanation\\
-	ciphertext:	PBVWETLXOZR\\
+ANSWER:key:     legleglegle\\
+    plaintext:  explanation\\
+        ciphertext:     PBVWETLXOZR\\
 \textbf{5.} It can be shown that the Hill cipher with the matrix
 \begin{equation}       %开始数学环境
 \left(                 %左括号
@@ -145,14 +145,14 @@ i. Find the total number of matrices whose determinant is neither a multiple of 
 \\
 ANSWER:\\
     a.7$\times$ $13^{4}$\\
-	b.7$\times$ $13^{4}$\\
-	c.$13^{4}$\\
-	d.10$\times$ $13^{4}$\\
-	e.24$\times$ $13^{2}$\\
-	f.24$\times$ ($13^{2}$-1)\\
-	g.37648\\
-	h.23530\\
-	i.157248\\
+        b.7$\times$ $13^{4}$\\
+        c.$13^{4}$\\
+        d.10$\times$ $13^{4}$\\
+        e.24$\times$ $13^{2}$\\
+        f.24$\times$ ($13^{2}$-1)\\
+        g.37648\\
+        h.23530\\
+        i.157248\\
 
 \textbf{6.} Consider a Feistel cipher composed of sixteen rounds with a block length of 128 bits and a key length of 128 bits. Suppose that, for a given k,the key scheduling algorithm determines values for the first eight round keys,k1,k2 and then sets:\\
 \centerline{k9=k8,k10=k7,k11=k6.....k16=k1}\\
@@ -163,19 +163,19 @@ ANSWER:Because of the key schedule, the round functions used in rounds 9 through
 \textbf{7.} Question:Briefly describe AddRoundKey .\\\\
   Answer:\\
   Key expansion:\\
-		W0 = 1010 0111 W1 = 0011 1011 W2 = 0001 1100 W3 = 0010 0111\\
-		W4 = 0111 0110 W5 = 0101 0001\\
-	Round 0:\\
-		After Add round key: 1100 1000 0101 0000\\
-	Round 1:\\
-		After Substitute nibbles: 1100 0110 0001 1001\\
-		After Shift rows: 1100 1001 0001 0110\\
-		After Mix columns: 1110 1100 1010 0010\\
-		After Add round key: 1110 1100 1010 0010\\
-	Round 2:\\
-		After Substitute nibbles: 1111 0000 1000 0101\\
-		After Shift rows: 0111 0001 0110 1001\\
-		After Add round key: 0000 0111 0011 1000 \\
+                W0 = 1010 0111 W1 = 0011 1011 W2 = 0001 1100 W3 = 0010 0111\\
+                W4 = 0111 0110 W5 = 0101 0001\\
+        Round 0:\\
+                After Add round key: 1100 1000 0101 0000\\
+        Round 1:\\
+                After Substitute nibbles: 1100 0110 0001 1001\\
+                After Shift rows: 1100 1001 0001 0110\\
+                After Mix columns: 1110 1100 1010 0010\\
+                After Add round key: 1110 1100 1010 0010\\
+        Round 2:\\
+                After Substitute nibbles: 1111 0000 1000 0101\\
+                After Shift rows: 0111 0001 0110 1001\\
+                After Add round key: 0000 0111 0011 1000 \\
 
 \textbf{8.} Question:For the ECB, CBC, and CFB modes, the plaintext must be a sequence of one or more complete data blocks (or, for CFB mode, data segments). In other words, for these three modes, the total number of bits in the plaintext must be a positive multiple of the block (or segment) size. One common method of padding, if needed, consists of a 1 bit followed by as few zero bits, possibly none, as are necessary to complete the final block. It is considered good practice for the sender to pad every message, including messages in which the final message block is already complete. What is the motivation for including a padding block when padding is not needed? \\\\
   Answer:After decryption, the last byte of the last block is used to determine the amount of padding that must be stripped off. Therefore there must be at least one byte of padding.\\
@@ -196,7 +196,7 @@ b.  Is the technique secure?\\
 c.  How many times can the same set of secret keys be safely used for different messages?\\
 d.  What,if any,practical problems does this scheme present?\\
 
-ANSWER:	\\
+ANSWER: \\
 a.  The receiver validates the digital signature by ensuring that the first 56-bit key in the signature will encipher validation parameter $u$1 into E($k$1, $u$1) if the first bit of $M$ is 0, or that it will encipher $U$1 into E($K$1, $U$1) if the first bit of $M$ is 1; the second 56-bit key in the signature will encipher validation parameter $u$2 into E($k$2, $u$2) if the second bit of $M$ is 0, or it will encipher $U$2 into E($K$2, $U$2) if the second bit of $M$ is 1,; and so on.\\
 b.  Only the sender, who knows the private values of $ki$ and $Ki$ and who originally creates $vi$ and $Vi$ from $ui$ and $Ui$ can disclose a key to the receiver. An opponent would have to discover the value of the secret keys from the plaintext-ciphertext pairs of the public key, which was computationally infeasible at the time that 56-bit keys were considered secure.\\
 c.  This is a one-time system, because half of the keys are revealed the first time.\\
@@ -233,21 +233,21 @@ To sign a message $M$, compute $h$ = h(M), which is the hash code of the message
 \textbf{b. }Show that the scheme is unacceptable by describing a simple technique for forging a user’s signature on an arbitrary message.\\
 
 ANSWER:\\
-\textbf{a.}	To verify the signature, the user verifies that $(g^{Z})^{h} = g^{X} mod p$.\\
-\textbf{b.}	To forge the signature of a message, I find its hash h. Then I calculate $\Upsilon$ to satisfy $\Upsilon h$ = 1 mod (p-1). Now $g^{\Upsilon h}$ = $g$, so $g^{X\Upsilon h}$ = $g^{X} mod p$. Hence $(h, g^{X\Upsilon})$ is a valid signature and the opponent can calculate $g^{X\Upsilon}$ as $(g^{X})^{\Upsilon}$.
+\textbf{a.}     To verify the signature, the user verifies that $(g^{Z})^{h} = g^{X} mod p$.\\
+\textbf{b.}     To forge the signature of a message, I find its hash h. Then I calculate $\Upsilon$ to satisfy $\Upsilon h$ = 1 mod (p-1). Now $g^{\Upsilon h}$ = $g$, so $g^{X\Upsilon h}$ = $g^{X} mod p$. Hence $(h, g^{X\Upsilon})$ is a valid signature and the opponent can calculate $g^{X\Upsilon}$ as $(g^{X})^{\Upsilon}$.
 \\
 \\
 \textbf{13.} Suppose that, in PCBC mode, blocks $C_{i}$ and $C_{i+1}$ are interchanged during transmission. Show that this affects only the decrypted blocks $P_{i}$ and $P_{i+1}$  but not subsequent blocks.\\
 
 ANSWER:\\
 Let us consider the case of the interchange of C1 and C2. The argument will be the same for any other adjacent pair of ciphertext blocks. First, if C1 and C2 arrive in the proper order:
-	$P_{1}$ = $E[K, C_{1}] \bigoplus IV$\\
-	$P_{2}$ = $E[K, C_{2}] \bigoplus C_{1} \bigoplus P_{1}$ = $E[K, C_{2}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus IV$\\
-	$P_{3}$ = $E[K, C_{3}] \bigoplus C_{2} \bigoplus P_{2}$ = $E[K, C_{3}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus IV$\\
+        $P_{1}$ = $E[K, C_{1}] \bigoplus IV$\\
+        $P_{2}$ = $E[K, C_{2}] \bigoplus C_{1} \bigoplus P_{1}$ = $E[K, C_{2}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus IV$\\
+        $P_{3}$ = $E[K, C_{3}] \bigoplus C_{2} \bigoplus P_{2}$ = $E[K, C_{3}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus IV$\\
 Now suppose that $C_{1}$ and $C_{2}$ arrive in the reverse order. Let us refer to the decrypted blocks as $Q_{i}$.
-	$Q_{1}$ =	$E[K, C_{2}] \bigoplus IV$\\
-	$Q_{2}$ =	$E[K, C_{1}] \bigoplus C_{2} \bigoplus Q1$ = $E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
-	$Q_{3}$ =	$E[K, C_{3}] \bigoplus C_{1} \bigoplus Q2$ = $E[K, C_{3}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
+        $Q_{1}$ =       $E[K, C_{2}] \bigoplus IV$\\
+        $Q_{2}$ =       $E[K, C_{1}] \bigoplus C_{2} \bigoplus Q1$ = $E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
+        $Q_{3}$ =       $E[K, C_{3}] \bigoplus C_{1} \bigoplus Q2$ = $E[K, C_{3}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
 The result is that $Q_{1}$ ≠ $P_{1}$;  $Q_{2}$ ≠ $P_{2}$; but $Q_{3}$ = $P_{3}$. Subsequent blocks are clearly unaffected.\\
 \\
 \\
@@ -275,7 +275,7 @@ n = 11*7\\
 {a^{\varphi (n)}} = 1\bmod n\\
 {3^{19935}}\bmod 77 = {3^{332*60 + 15}}\bmod 77 = 1*{3^{15}}\bmod 77 = 34
 \end{array}\]
-%\end{split}					
+%\end{split}                                    
 %\end{align}
 
 
