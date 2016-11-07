@@ -327,6 +327,49 @@ a number is prime. How can such an algorithm be used to test for primality ?\\
 ANSWER:\\
 The algorithm takes a candidate integer n as input and returns the result "composite" if n is definitely not a prime, and the result "inconclusive" if n may or may not be a prime. If the algorithm is repeatedly applied to a number and repeatedly returns inconclusive, then the probability that the number is actually prime increases with each inconclusive test. The probability required to accept a number as prime can be set as close to 1.0 as desired by increasing the number of tests made. \\
 
+\textbf{21.} What are basic components of computer security? Try to give the connotation of each item in your list.
+
+ANSWER:\\
+\begin{enumerate}
+\item Confidentiality: Keeping data and resources hidden.
+\item Integrity: Data integrity (integrity) and Origin integrity
+  (authentication).
+  \item Availability: Enabling access to data and resources.
+\end{enumerate}
+
+\textbf{22.} What are the distiguish characteristics of computer virus? Specify the working princople of anti-virus software.
+
+ANSWER:\\
+Computer visrus is a kind of programs, it can reproduce and spread itself. Anti-virus softwarw using the checksum of virus to identify the virus and hence they have to upate their virus database in time. 
+
+\textbf{23.} What is Cryptographic Checksum Function.
+
+ANSWER:
+\begin{enumerate}
+\item For any $x\in A$, $h(x)$ is easy to compute
+\item For any $y\in B$, it is computationally infeasible to find $x \in A$ such that $h(x) = y$
+\item It is computationally infeasible to find two inputs $x, x’ \in A$  such that $x ≠ x’$ and $h(x) = h(x’)$
+\end{enumerate}
+
+\textbf{24.} What are MAC and DAC？
+
+ANSWER: \\
+Discretionary Access Control (DAC), individual user sets access control mechanism to allow or deny access to an object. Mandatory Access Control (MAC), system mechanism controls access to object, and individual cannot alter that access.
+
+\textbf{25.} What are Classic key cryptography and Public key cryptography?
+
+ANSWER: \\
+Classical key cryptography, encryption and decryption use the same key or easily from one to derive the other. Public key cryptography, encryption and decryption use difference key, and it is computationally infeasible to derive one from the other.
+
+\textbf{26.} A finite-state machine as following, the authorized states are s1 and s2. Is this system secure or non-secure? Why? 
+ 
+ANSWER: \\
+Non-secure, since there is a path from state 1 to state 3, which is an unauthorized states.
+
+\textbf{27.} How to implement Zero Knowledge Proof by hash function? e.g. username &PIN authorization.
+
+ANSWER: \\
+Store the hash function instead of the plain text. I.e., each time the computer only compare the hash value of PIN instead of the original ones.
 
 
 
