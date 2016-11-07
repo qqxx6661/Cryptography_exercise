@@ -69,40 +69,52 @@
 \maketitle % Print the title
 
 
-\textbf{1.} A generalization of the Caesar cipher, known as the affine Caesar cipher, has the following form: For each plaintext letter p , substitute the ciphertext letter C:
+\textbf{1.} A generalization of the Caesar cipher, known as the affine Caesar cipher, has the following form: For each plaintext letter $p$, substitute the ciphertext letter $C$:
+$$C = E([a, b], p) = (ap + b) \mod 26$$
 
-\centerline{C = E([a, b], p) = (ap + b) mod 26}
+A basic requirement of any encryption algorithm is that it be
+one-to-one. That is, if $p\not\equiv q$, then $E(k,p)\not\equiv E(k,q)$. Otherwise, decryption is impossible, because more than one plaintext character maps into the same ciphertext character. The affine Caesar cipher is not one-to-one for all values of $a$. For example, for $a=2$ and $b=3$,then $E([a,b],0)=E([a,b],13)=3$.
 
-A basic requirement of any encryption algorithm is that it be one-to-one. That is, if p$\not\equiv$q,then E(k,p)$\not\equiv$E(k,q) . Otherwise, decryption is impossible, because more than one plaintext character maps into the same ciphertext character. The affine Caesar cipher is not one-to-one for all values of a. For example, for a=2 and b=3,then E([a,b],0)=E([a,b],13)=3.
-
-a. Are there any limitations on the value of b Explain why or why not.
-
-b. Determine which values of are not allowed.
-
-c. Provide a general statement of which values of a are and are not allowed. Justify your statement.\\
-
-
+\begin{enumerate}
+\item Are there any limitations on the value of b Explain why or why not.
+\item Determine which values of are not allowed.
+\item Provide a general statement of which values of a are and are not allowed. Justify your statement.
+\end{enumerate}
 
 ANSWER:
 
-a. No. A change in the value of b shifts the relationship between plaintext letters and ciphertext letters to the left or right uniformly, so that if the mapping is one-to-one it remains one-to-one.
+\begin{enumerate}
+\item No. A change in the value of b shifts the relationship between
+  plaintext letters and ciphertext letters to the left or right
+  uniformly, so that if the mapping is one-to-one it remains
+  one-to-one.
+\item $2,4,6,8,10,12,13,14,16,18,20,22,24$. Any value of $a$ larger than $25$ is equivalent to $a \mod 26$.
+\item The values of $a$ and $26$ must have no common positive integer
+  factor other than $1$. This is equivalent to saying that $a$ and $26$ are
+  relatively prime, or that the greatest common divisor of $a$ and $26$ is
+  $1$. To see this, first note that $E(a,p) = E(a,q)$ ($0\le p \le
+  q<26$) if and only if $a(p-q)$ is divisible by $26$.
+  \begin{enumerate}
+  \item[a] Suppose that $a$ and $26$ are relatively prime. Then, $a(p-q)$ is not divisible by $26$, because there is no way to reduce the fraction $a/26$ and $(p-q)$ is less than $26$.
+  \item[b] Suppose that $a$ and $26$ have a common factor $k>1$. Then
+    $E(a,p)=E(a,q)$, if $q=p+m/k\not\equiv p$.
+  \end{enumerate}
+\end{enumerate}
 
-b. 2,4,6,8,10,12,13,14,16,18,20,22,24. Any value of a larger than 25 is equivalent to a mod 26.
 
-c. The values of a and 26 must have no common positive integer factor other than 1. This is equivalent to saying that a and 26 are relatively prime, or that the greatest common divisor of a and 26 is 1. To see this, first note that E(a,p) = E(a,q) (0$\le$p$\le$q<26) if and only if a(p-q) is divisible by 26.
+\textbf{2.} A ciphertext has been generated with an affine cipher.The most frequent letter of the ciphertext is $B$, and the second most frequent letter of the ciphertext is $U$. Break this code.
 
-(1). Suppose that a and 26 are relatively prime. Then, a(p-q) is not divisible by 26, because there is no way to reduce the fraction a/26 and (p-q) is less than 26.
+ANSWER:
+ Assume that the most frequent plaintext letter is $e$ and the second
+ most frequent letter is $t$. Note that the numerical values are $e =
+ 4; B = 1; t = 19; U = 20$. Then we have the following equations:
+ \begin{eqnarray*}
+        1 = (4a + b) \mod 26\\
+        20 = (19a + b) \mod 26
+ \end{eqnarray*}
+ Thus, $19 = 15a \mod 26$. By trial and error, we solve: $a = 3$.
+ Then $1 = (12 + b) \mod 26$. By observation, $b = 15$.
 
-(2). Suppose that a and 26 have a common factor k>1. Then E(a,p)=E(a,q), if q=p+m/k$\not\equiv$p.\\
-
-
-\textbf{2.} A ciphertext has been generated with an affine cipher.The most frequent letter of the ciphertext is B, and the second most frequent letter of the ciphertext is U. Break this code.
-
-ANSWER:Assume that the most frequent plaintext letter is e and the second most frequent letter is t. Note that the numerical values are e = 4; B = 1; t = 19; U = 20. Then we have the following equations:\\
-        \centerline{1 = (4a + b) mod 26}\\
-        \centerline{20 = (19a + b) mod 26}\\
-        Thus, 19 = 15a mod 26. By trial and error, we solve: a = 3.
-        Then 1 = (12 + b) mod 26. By observation, b = 15.\\
 \textbf{3.} One way to solve the key distribution problem is to use a line from a book that both the sender and the receiver possess. Typically, at least in spy novels, the first sentence of a book serves as the key. The particular scheme discussed in this problem is from one of the best suspense novels involving secret codes, Talking to Strange Men, by Ruth Rendell. Work this problem without consulting that book!Consider the following message:\\
 \centerline{SIDKHKDM AF HCRKIABIE SHIMC KD LFEAILA}\\
 This ciphertext was produced using the first sentence of The Other Side of Silence(a book about the spy Kim Philby):The snow lay thick on the steps and the snowflakes driven by the wind looked black in the headlights of the cars.\\
@@ -118,23 +130,23 @@ plaintext:   basilisk to leviathan blake is contact\\
         c.      The last sentence may not contain all the letters of the alphabet. If the first sentence is used, the second and subsequent sentences may also be used until all 26 letters are encountered.\\
 \\
 \\
-\textbf{4.} Using the Vigen®®re cipher, encrypt the word °∞explanation°± using the key leg.\\
+\textbf{4.} Using the Vigen√®re cipher, encrypt the word ‚Äúexplanation‚Äù using the key leg.\\
 \\
 ANSWER:key:     legleglegle\\
     plaintext:  explanation\\
         ciphertext:     PBVWETLXOZR\\
 \textbf{5.} It can be shown that the Hill cipher with the matrix
-\begin{equation}       %ø™ º ˝—ßª∑æ≥
-\left(                 %◊Û¿®∫≈
-  \begin{array}{cc}   %∏√æÿ’Û“ªπ≤2¡–£¨√ø“ª¡–∂ºæ”÷–∑≈÷√
-    a & b\\  %µ⁄“ª––‘™Àÿ
-    c & d\\  %µ⁄∂˛––‘™Àÿ
+\begin{equation}       %ÂºÄÂßãÊï∞Â≠¶ÁéØÂ¢É
+\left(                 %Â∑¶Êã¨Âè∑
+  \begin{array}{cc}   %ËØ•Áü©Èòµ‰∏ÄÂÖ±2ÂàóÔºåÊØè‰∏ÄÂàóÈÉΩÂ±Ö‰∏≠ÊîæÁΩÆ
+    a & b\\  %Á¨¨‰∏ÄË°åÂÖÉÁ¥†
+    c & d\\  %Á¨¨‰∫åË°åÂÖÉÁ¥†
   \end{array}
-\right)                 %”“¿®∫≈
+\right)                 %Âè≥Êã¨Âè∑
 \end{equation}
-requires that is relatively prime to 26; that is, the only common positive integer factor of and 26 is 1. Thus, if or is even, the matrix is not allowed. Determine the number of different (good) keys there are for a 2 °¡ 2 Hill cipher without counting them one by one, using the following steps:\\
-a. Find the number of matrices whose determinant is even because one or both rows are even. (A row is °∞even°± if both entries in the row are even.)\\
-b. Find the number of matrices whose determinant is even because one or both columns are even. (A column is °∞even°± if both entries in the column are even.)\\
+requires that is relatively prime to 26; that is, the only common positive integer factor of and 26 is 1. Thus, if or is even, the matrix is not allowed. Determine the number of different (good) keys there are for a 2 √ó 2 Hill cipher without counting them one by one, using the following steps:\\
+a. Find the number of matrices whose determinant is even because one or both rows are even. (A row is ‚Äúeven‚Äù if both entries in the row are even.)\\
+b. Find the number of matrices whose determinant is even because one or both columns are even. (A column is ‚Äúeven‚Äù if both entries in the column are even.)\\
 c. Find the number of matrices whose determinant is even because all of the entries are odd.\\
 d. Taking into account overlaps, find the total number of matrices whose determinant is even.\\
 e. Find the number of matrices whose determinant is a multiple of 13 because the first column is a multiple of 13.\\
@@ -187,7 +199,7 @@ ANSWER:Because of the key schedule, the round functions used in rounds 9 through
 \centerline{\emph{ k1 , K1 , k2 , K2 , \ldots , kn , Kn }}
 which are kept private. The sender prepares in advance two sets of corresponding non-secret 64-bit validation parameters, which are made public :\\
 \centerline{\emph{ u1, U1 , u2 , U2 , \ldots , un , Un }  and  \emph{ v1 , V1 , v2 , V2 , \ldots , vn , Vn }}
-where £∫\\
+where Ôºö\\
 \centerline{\emph{ vi =  E ( ki , ui ) ,  Vi = E ( ki , Ui )}}
 The message M is signed as follows. For the $i$th bit of the message, either \emph{ki} or \emph{Ki} is attached to the message, depending on whether the message bit is 0 or 1. For example, if the first three bits of the message are 011, then the first three keys of the signature are $k$1, $K$2, $K$3. \\
 
@@ -230,7 +242,7 @@ b.  This algorithm is a simplified version of the Miller-Rabin algorithm. In bot
 To sign a message $M$, compute $h$ = h(M), which is the hash code of the message.We require that $gcd(h, q - 1) = 1$.If not,append the hash to the message and calculate a new hash. Continue this process until a hash code is produced that is relatively prime to ($q$ - 1).Then calculate $Z$ to satisfy $Z \times h \equiv X(mod q - 1)$.The signature of the message is $\alpha^{Z}$. To verify the signature, a user verifies that $y = (\alpha^{Z})^{h}$ = $\alpha^{X}$ mod $q$.\\
 
 \textbf{a.} Show that this scheme works.That is, show that the verification process produces an equality if the signature is valid.\\
-\textbf{b. }Show that the scheme is unacceptable by describing a simple technique for forging a user°Øs signature on an arbitrary message.\\
+\textbf{b. }Show that the scheme is unacceptable by describing a simple technique for forging a user‚Äôs signature on an arbitrary message.\\
 
 ANSWER:\\
 \textbf{a.}     To verify the signature, the user verifies that $(g^{Z})^{h} = g^{X} mod p$.\\
@@ -248,7 +260,7 @@ Now suppose that $C_{1}$ and $C_{2}$ arrive in the reverse order. Let us refer t
         $Q_{1}$ =       $E[K, C_{2}] \bigoplus IV$\\
         $Q_{2}$ =       $E[K, C_{1}] \bigoplus C_{2} \bigoplus Q1$ = $E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
         $Q_{3}$ =       $E[K, C_{3}] \bigoplus C_{1} \bigoplus Q2$ = $E[K, C_{3}] \bigoplus C_{1} \bigoplus E[K, C_{1}] \bigoplus C_{2} \bigoplus E[K, C_{2}] \bigoplus IV$\\
-The result is that $Q_{1}$ °Ÿ $P_{1}$;  $Q_{2}$ °Ÿ $P_{2}$; but $Q_{3}$ = $P_{3}$. Subsequent blocks are clearly unaffected.\\
+The result is that $Q_{1}$ ‚â† $P_{1}$;  $Q_{2}$ ‚â† $P_{2}$; but $Q_{3}$ = $P_{3}$. Subsequent blocks are clearly unaffected.\\
 \\
 \\
 \textbf{14.} What are three threats associated with user authentication over a network or Internet?\\
