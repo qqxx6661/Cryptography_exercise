@@ -69,14 +69,14 @@ everyone should writes a distinct section provided with 20 excercise.
 
 Users A and B use the Diffie-Hellman key exchange technique with a common prime $q = 71$ and a primitive root $a = 7$.
 
-Question: 
+Question:
 \begin{enumerate}
 \item If user A has private key, what is A's public key $Y_A$?
 \item If user B has private key, what is B's public key $Y_B$?
 \item  What is the shared secret key?
 \end{enumerate}
 
-Answer: 
+Answer:
 \begin{enumerate}
 \item $Y_A = 7^5 mod 71= 51$.
 \item $Y_B = 7^{12} mod 71= 4$.
@@ -88,7 +88,7 @@ Answer:
 
 Consider a Diffie-Hellman scheme with a common prime $q = 11$ and a primitive root $\alpha = 7$.
 
-Question: 
+Question:
 \begin{enumerate}
 \item Show that 2 is a primitive root of 11.
 \item If user A has public key $Y_A = 9$, what is A¡¯s private key $X_A$?
@@ -96,7 +96,7 @@ Question:
 \end{enumerate}
 
 
-Answer: 
+Answer:
 \begin{enumerate}
 \item $\phi(11) = 10$, $2^10 = 1024 = 1 mod 11$. If you check $2^n$ for $n < 10$, you will find that none of the values is $1 mod 11$.
 \item 6, because $2^6 mod 11 = 9$.
@@ -137,7 +137,7 @@ Answer:
 We describes a man-in-the-middle attack on the Diffie-Hellman key exchange protocol in which the adversary generates two public¨Cprivate key pairs for
 the attack. Could the same attack be accomplished with one pair? Explain.
 
-Answer: 
+Answer:
 \begin{enumerate}
 \item Darth prepares for the attack by generating a random private key $X_D$ and then computing the corresponding public key $Y_D$.
 \item Alice transmits $Y_A$ to Bob.
@@ -148,18 +148,21 @@ Answer:
 \item Alice receives $Y_D$ and calculates $K2 = {\left( {{Y_D}} \right)^{{X_A}}}\bmod q$.
 \end{enumerate}
 
+\subsection{ElGamal Scheme Problem}
 
+Consider an ElGamal scheme with a common prime $q = 71$ and a primitive root $\alpha = 7$.
 
+\begin{enumerate}
+\item If B has public key $Y_B = 3$ and A chose the random integer $k = 2$, what is the ciphertext of $M = 30$?
+\item If A now chooses a different value of so that the encoding of $M = 30$ is $C = (59, C^2)$, what is the integer $C^2$?
+\end{enumerate}
 
+Answer: 
 
-
-
-
-
-
-
-
-
+\begin{enumerate}
+\item (49, 57).
+\item $C^2 = 29$.
+\end{enumerate}
 
 
 
