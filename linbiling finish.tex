@@ -1,0 +1,317 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+
+ \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+ \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+ \usepackage[english]{babel} % English language/hyphenation
+ \usepackage{amsmath,amsfonts,amsthm} % Math packages
+ \usepackage{graphicx}
+ \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+ \usepackage{sectsty} % Allows customizing section commands
+ \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+
+ \usepackage{fancyhdr} % Custom headers and footers
+ \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+ \fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+ \fancyfoot[L]{} % Empty left footer
+ \fancyfoot[C]{} % Empty center footer
+ \fancyfoot[R]{\thepage} % Page numbering for right footer
+ \renewcommand{\headrulewidth}{0pt} % Remove header underlines
+ \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+ \setlength{\headheight}{13.6pt} % Customize the height of the header
+
+
+ \numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+ \numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+ \numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+ \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+
+ %----------------------------------------------------------------------------------------
+ %       TITLE SECTION
+ %----------------------------------------------------------------------------------------
+
+
+ \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+
+ \title{
+ \normalfont \normalsize
+ \textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
+ \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+ \huge Exercises \\ % The assignment title
+ \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+ }
+
+
+ \author{Biling Lin} % Your name
+
+
+ \date{\normalsize\today} % Today's date or a custom date
+
+
+ \begin{document}
+
+
+ \maketitle % Print the title
+ \section{Public key cryptosystem}
+ \label{sec:pkc}
+
+ \subsection{Public key Definition Problem \uppercase\expandafter{\romannumeral1}}
+
+ What is Public key?\\
+
+ \textbf{Answer:}\\
+
+ Public-key cryptography provides a radical departure from all that has gone before. For one thing, public-key algorithms are based on mathematical functions rather than on substitution and permutation.More important, public-key cryptography is asymmetric,involving the use of two separate keys, in contrast to symmetric encryption, which uses only one key. The use of two keys has profound consequences in the areas of confidentiality, key distribution, and authentication, as we shall see.
+
+ \subsection{Public key Certificate Problem \uppercase\expandafter{\romannumeral2}}
+
+ Please describe the Public Key Certificate?\\
+
+ \textbf{Answer:}\\
+
+  A digital document issued and digitally signed by the private key of a Certification Authority that binds the name of a subscriber to a public key. The certificate indicates that the subscriber identified in the certificate has sole control and access to the corresponding private key.
+
+
+ \subsection{Public key cryptosystem Problem \uppercase\expandafter{\romannumeral3}}
+
+ What are the principal elements of a public-key cryptosystem?\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Plaintext: This is the readable message or data that is fed into the algorithm as input.
+ \item Encryption algorithm: The encryption algorithm performs various transformations on the plaintext.
+ \item Public and private keys: This is a pair of keys that have been selected so that if one is used for encryption, the other is used for decryption. The exact transformations performed by the encryption algorithm depend on the public or private key that is provided as input.
+ \item Decryption algorithm: This algorithm accepts the ciphertext and the matching key and produces the original plaintext.
+ \item Ciphertext: This is the scrambled message produced as output. It depends on the plaintext and the key. For a given message, two different keys will produce two different ciphertexts.
+ \end{enumerate}
+
+ \subsection{Public key cryptosystem Problem \uppercase\expandafter{\romannumeral4}}
+
+ Please list the essential steps of a public-key encryption scheme.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Each user generates a pair of keys to be used for the encryption and decryption of messages.
+ \item Each user places one of the two keys in a public register or other accessible file. This is the public key. The companion key is kept private. Each user maintains a collection of public keys obtained from others.
+ \item If Bob wishes to send a confidential message to Alice, Bob encrypts the message using Alice's public key.
+ \item When Alice receives the message, she decrypts it using her private key. No other recipient can decrypt the message because only Alice knows Alice's private key.
+ \end{enumerate}
+
+ \subsection{public-key encryption Problem \uppercase\expandafter{\romannumeral5}}
+
+ Please list the needed work and security of public-key encryption.\\
+
+ \textbf{Answer:}\\
+
+ Needed to Work:
+ \begin{enumerate}
+ \item One algorithm is used for encryption and decryption with a pair of keys, one for encryption and one for decryption.
+ \item The sender and receiver must each have one of the matched pair of keys (not the same one).
+ \end{enumerate}
+
+ Needed for Security:
+ \begin{enumerate}
+ \item One of the two keys must be kept secret.
+ \item It must be impossible or at least impractical to decipher a message if no other information is available.
+ \item Knowledge of the algorithm plus one of the keys plus samples of ciphertext must be insufficient to determine the other key.
+ \end{enumerate}
+
+
+ \subsection{the public and private key Problem \uppercase\expandafter{\romannumeral6}}
+
+ What are the roles of the public and private key?\\
+
+ \textbf{Answer:}\\
+
+  A user's private key is kept private and known only to the user. The user's public key is made available to others to use. The private key can be used to encrypt a signature that can be verified by anyone with the public key. Or the public key can be used to encrypt information that can only be decrypted by the possessor of the private key.
+
+\subsection{Applications of public-key cryptosystems Problem \uppercase\expandafter{\romannumeral7}}
+
+What are three broad categories of applications of public-key cryptosystems?\\
+
+\textbf{Answer:}
+
+ \begin{enumerate}
+ \item Encryption/decryption: The sender encrypts a message with the recipient's public key.
+ \item Digital signature: The sender "signs" a message with its private key. Signing is achieved by a cryptographic algorithm applied to the message or to a small block of data that is a function of the message.
+ \item Key exchange: Two sides cooperate to exchange a session key. Several different approaches are possible, involving the private key(s) of one or both parties.
+ \end{enumerate}
+
+\subsection{Requirements for Public-Key Cryptography \uppercase\expandafter{\romannumeral8}}
+
+ What requirements must a public key cryptosystems fulfill to be a secure algorithm?\\
+
+\textbf{Answer:}
+
+ \begin{enumerate}
+ \item It is computationally easy for $a$ party $B$ to generate a pair (public key $PU_{b}$ , private key $PR_{b}$).
+ \item It is computationally easy for a sender $A$, knowing the public key and the message to be encrypted, $M$, to generate the corresponding ciphertext:\\
+  \\
+  \centerline{$C = E(PU_{b} , M)$}
+ \item It is computationally easy for the receiver $B$ to decrypt the resulting ciphertext using the private key to recover the original message:\\
+  \\
+  \centerline{$M = D(PR_{b} , C) = D(PR_{b} , E(PU_{b} , M))$}
+ \item It is computationally infeasible for an opponent, knowing the public key, $PU_{b}$ , to determine the private key,$PR_{b}$.
+ \item It is computationally infeasible for an opponent, knowing the public key, $PU_{b}$ , and a ciphertext, $C$, to recover the original message, $M$.
+ \end{enumerate}
+
+ \subsection{One-way function Problem \uppercase\expandafter{\romannumeral9}}
+
+ What is a one-way function?\\
+
+ \textbf{Answer:}\\
+
+ A one-way function is one that maps $a$ domain into a range such that every function value has a unique inverse, with the condition that the calculation of the function is easy whereas the calculation of the inverse is infeasible:\\
+\\
+ \centerline{$Y = f(X)$ \hspace{1.1cm} easy}
+ \\
+ \centerline{\hspace{0.8cm} $X = f^{-1}(Y)$ \hspace{0.8cm} infeasible}
+
+ \subsection{Trap-door one-way function Problem \uppercase\expandafter{\romannumeral10}}
+
+ What is a trap-door one-way function?\\
+
+ \textbf{Answer:}\\
+
+  A trap-door one-way function is easy to calculate in one direction and infeasible to calculate in the other direction unless certain additional information is known. With the additional information the inverse can be calculated in polynomial time. We can summarize as follows:\\
+  A trap-door one-way function is a family of invertible functions $f_{k}$ ,such that:\\
+ \\
+ \centerline{$Y = f_{k} (X)$ \hspace{1.2cm} easy, if $k$ and $X$ are known}
+ \centerline{$X = f_{k}^{-1}(Y)$ \hspace{1cm} easy, if $k$ and $Y$ are known}
+ \centerline{\hspace{2.7cm}$X = f_{k}^{-1}(Y)$ \hspace{1cm} infeasible, if $Y$ is known but $k$ is not known}
+ \\
+ Thus, the development of a practical public-key scheme depends on discovery of a suitable trap-door one-way function.
+
+ \subsection{Procedure for picking a prime number Problem \uppercase\expandafter{\romannumeral11}}
+
+ Describe in general terms an efficient procedure for picking a prime number.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Pick an odd integer $n$ at random ($e.g.$, using a pseudorandom number generator).
+ \item Pick an integer $a < n$ at random.
+ \item  Perform the probabilistic primality test, such as $Miller-Rabin$. If $n$ fails the test, reject the value $n$ and go to step $1$.
+ \item  If $n$ has passed a sufficient number of tests, accept $n$; otherwise, go to step $2$.
+ \end{enumerate}
+
+
+ \subsection{the RSA public-key encryption scheme Problem \uppercase\expandafter{\romannumeral12}}
+
+ In the RSA public-key encryption scheme, each user has a public key, $e$, and a private key, $d$. Suppose Bob leaks his private key. Rather than generating a new modulus, he decides to generate a new public and a new private key. Is this safe?\\
+
+ \textbf{Answer:}\\
+
+ No, it is not safe. Once Bob leaks his private key, Alice can use this to factor his modulus, $N$. Then Alice can crack any message that Bob sends.\\
+ \\
+ Here is one way to factor the modulus:\\
+ \\
+ Let $k=ed-1$. Then $k$ is congruent to $0 mod \phi(N)$ (where "$\phi$" is the Euler totient function). Select a random $x$ in the multiplicative group $Z(N)$. Then $x^{k}$ $\equiv 1$ mod $N$, which implies that $x^{k/2}$ is a square root of $1 mod N$. With $50$ percentage probability, this is a nontrivial square root of $N$, so that\\
+  \\
+  \centerline{$gcd(x^{k/2}-1, N)$ \hspace{0.2cm} will yield a prime factor of $N$}. \\
+  \\
+  If $x^{k/2} = 1$ mod $N$, then try $x^{k/4}$, $x^{k/8}$, etc\ldots \\
+  \\
+  This will fail if and only if  $x^{k/2^{i}} \equiv-1$ for some $i$. If it fails, then choose a new $x$. \\
+  \\
+  This will factor $N$ in expected polynomial time.
+
+ \subsection{The constraints of RSA Problem \uppercase\expandafter{\romannumeral13}}
+
+ In addition to specifying the size of $n$, a number of other constraints have been suggested by researchers.To avoid values of $n$ that may be factored more easily, which constraints should be considered.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+  \item $p$ and $q$ should differ in length by only a few digits. Thus, for a $1024$-bit key ($309$ decimal digits),both $p$ and $q$ should be on the order of magnitude of $10^{75}$ to $10^{100}$.
+  \item Both $(p - 1)$ and $(q - 1)$ should contain a large prime factor.
+  \item $gcd(p - 1,q - 1)$ should be small.
+ \end{enumerate}
+
+
+ \subsection{The Security of RSA Problem \uppercase\expandafter{\romannumeral14}}
+
+ Please list four possible approaches to attacking the RSA algorithm.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Brute force: This involves trying all possible private keys.
+ \item Mathematical attacks: There are several approaches,all equivalent in effort to factoring the product of two primes.
+ \item Timing attacks: These depend on the running time of the decryption algorithm.
+ \item Chosen ciphertext attacks: This type of attack exploits properties of the RSA algorithm.
+ \end{enumerate}
+
+ \subsection{the timing attack Problem \uppercase\expandafter{\romannumeral15}}
+
+ Although the timing attack is a serious threat, there are simple countermeasures that can be used,please list that measures.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Constant exponentiation time: Ensure that all exponentiations take the same amount of time before returning a result.This is a simple fix but does degrade performance.
+ \item Random delay: Better performance could be achieved by adding a random delay to the exponentiation algorithm to confuse the timing attack. $Kocher$ points out that if defenders don't add enough noise, attackers could still succeed by collecting additional measurements to compensate for the random delays.
+ \item Blinding: Multiply the ciphertext by a random number before performing exponentiation. This process prevents the attacker from knowing what cipher-text bits are being processed inside the computer and therefore prevents the bit-by-bit analysis essential to the timing attack.
+ \end{enumerate}
+
+
+ \subsection{the private-key operation Problem \uppercase\expandafter{\romannumeral16}}
+
+ RSA Data Security incorporates a blinding feature into some of its products. How to implementing the private-key operation $M = C^{d}$ mod $n$.\\
+
+ \textbf{Answer:}
+
+ \begin{enumerate}
+ \item Generate a secret random number $r$ between $0$ and $n - 1$.
+ \item Compute $C^{'}= C(r^{e} )$ mod $n$,where $e$ is the public exponent.
+ \item Compute $M^{'} = (C^{'})^{d}$ mod $n$ with the ordinary RSA implementation.
+ \item Compute $M = M^{'} r^{-1}$ mod $n$. In this equation, $r^{-1}$ is the multiplicative inverse of $r$ mod $n$. It can be demonstrated that this is the correct result by observing that $r^{ed}$ mod $n = r$ mod $n$.
+ \end{enumerate}
+
+
+ \subsection{RSA algorithm Problem \uppercase\expandafter{\romannumeral17}}
+
+ In an RSA system,the public key of a given user is $e = 31$, $n = 3599$. What is the private key of this user? Hint: First use trial-and-error to determine $p$ and $q$; then use the extended Euclidean algorithm to find the multiplicative inverse of $31$ modulo $\phi(n)$.\\
+
+ \textbf{Answer:}\\
+
+ By trail and error, we determine that $p = 59$ and $q = 61$. Hence $\phi(n) = 58 \times 60 = 3480$. Then, using the extended Euclidean algorithm, we find that the multiplicative inverse of $31$ modulo $\phi(n)$ is $3031$.
+
+\subsection{RSA algorithm Problem \uppercase\expandafter{\romannumeral18}}
+
+ In using the RSA algorithm, if a small number of repeated encodings give back the plaintext,what is the likely cause?\\
+
+ \textbf{Answer:}\\
+ Suppose the public key is $n = pq$, $e$. Probably the order of e relative to $(p-1)(q-1)$ is small so that a small power of e gives us something congruent to $1$ mod $(p-1)(q-1)$. In the worst case where the order is $2$ then $e$ and $d$ (the private key) are the same. Example: if $p = 7$ and $q = 5$ then $(p-1)(q-1) = 24$. If $e = 5$ then $e$ squared is congruent to $1$ mod $(p-1)(q-1)$; that is, $25$ is congruent to $24$ mod $1$.
+
+
+ \subsection{RSA algorithm Problem \uppercase\expandafter{\romannumeral19}}
+
+ Suppose we have a set of blocks encoded with the RSA algorithm and we don't have the private key. Assume $n = pq$, $e$ is the public key. Suppose also someone tells us they know one of the plaintext blocks has a common factor with $n$. Does this help us in any way?\\
+
+ \textbf{Answer:}
+ Yes. If a plaintext block has a common factor with n modulo $n$ then the encoded block will also have a common factor with $n$ modulo $n$. Because we encode blocks, which are smaller than $pq$, the factor must be $p$ or $q$ and the plaintext block must be a multiple of $p$ or $q$. We can test each block for primality. If prime, it is $p$ or $q$. In this case we divide into $n$ to find the other factor. If not prime, we factor it and try the factors as divisors of $n$.
+
+
+ \subsection{RSA algorithm Problem \uppercase\expandafter{\romannumeral20}}
+
+ Suppose Bob uses the RSA cryptosystem with a very large modulus $n$ for which the factorization cannot be found in a reasonable amount of time. Suppose Alice sends a message to Bob by representing each alphabetic character as an integer between $0$ and $25(A\rightarrow0,\ldots, Z\rightarrow25)$ and then encrypting each number separately using RSA with large $e$ and large $n$. Is this method secure? If not, describe the most efficient attack against this encryption method.\\
+
+ \textbf{Answer:}
+
+ Consider a set of alphabetic characters $\{A, B,\ldots, Z\}$. The corresponding integers, representing the position of each alphabetic character in the alphabet, form a set of message block values $SM = \{0, 1, 2,\ldots, 25\}$. The set of corresponding ciphertext block values \\
+  \centerline{$SC$ = {$0^{e}$ mod $N$, $1^{e}$ mod $N$, \ldots, $25^{e}$ mod $N$}},
+ and can be computed by everybody with the knowledge of the public key of Bob.\\
+  Thus, the most efficient attack against the scheme described in the problem is to compute $M^{e}$ mod $N$ for all possible values of $M$, then create a look-up table with a ciphertext as an index, and the corresponding plaintext as a value of the appropriate location in the table.
+
+\end{document}
+
+
