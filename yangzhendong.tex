@@ -36,7 +36,7 @@
 \normalfont \normalsize
 \textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Exercises \\ % The assignment title
+\huge Cryptography\_exercises \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -47,28 +47,12 @@
 \begin{document}
 
 \maketitle % Print the title
-\section{Symmetric key cryptosystem}
-\label{sec:skc}
-everyone should writes a distinct section provided with 20 excercise.
-\section{Public key cryptosystem}
-\label{sec:pkc}
-
-\section{Access control}
-
-\section{Classic cryptography}
-\label{sec:cc}
-
-\section{Digital signature}
-\label{sec:ds}
-
-\section{Confidentiality and integrity policies}
 
 \section{Key Management}
 \label{sec:km}
 
-\subsection{Key Distribution Facility Problem}
 
-One local area network vendor provides a key distribution facility, as illustrated in Figure \ref{7-3}.
+\textbf{1.} One local area network vendor provides a key distribution facility, as illustrated in Figure \ref{7-3}.
 
 \begin{enumerate}
 \item Describe the scheme.
@@ -96,18 +80,14 @@ One local area network vendor provides a key distribution facility, as illustrat
 \item The proposed scheme appears to provide the same degree of security as that of Figure \ref{7-4}. One advantage of the proposed scheme is that the, in the event that B rejects a connection, the overhead of an interaction with the KDC is avoided.
 \end{enumerate}
 
-\subsection{X.509 Problem \uppercase\expandafter{\romannumeral1}}
-
-What is the purpose of the X.509 standard?\\
+\textbf{2.} What is the purpose of the X.509 standard?\\
 
 \textbf{Answer:}
 
 X.509 defines a framework for the provision of authentication services by the X.500 directory to its users. The directory may serve as a repository of public-key
-certificates. Each certificate contains the public key of a user and is signed with the private key of a trusted certification authority.
+certificates. Each certificate contains the public key of a user and is signed with the private key of a trusted certification authority.\\
 
-\subsection{X.509 Problem \uppercase\expandafter{\romannumeral2}}
-
-The 1988 version of X.509 lists properties that RSA keys must satisfy to be secure given current knowledge about the difficulty of factoring large numbers. The discussion concludes with a constraint on the public exponent and the modulus $n$:
+\textbf{3.} The 1988 version of X.509 lists properties that RSA keys must satisfy to be secure given current knowledge about the difficulty of factoring large numbers. The discussion concludes with a constraint on the public exponent and the modulus $n$:
 
 \begin{enumerate}
 \item[-] It must be ensured that $e > \log_{2}(n) $ to prevent attack by taking the $e$th root mod $n$ to disclose the plaintext.
@@ -120,9 +100,7 @@ Although the constraint is correct, the reason given for requiring it is incorre
 Taking the $e$th root mod $n$ of a ciphertext block will always reveal the plaintext, no matter what the values of $e$ and $n$ are. In general this is a very difficult problem, and indeed is the reason why RSA is secure. The point is that, if $e$ is too small, then taking the normal integer eth root will be the same as taking the $e$th root mod $n$, and taking integer $e$th roots is relatively easy.
 
 
-\subsection{Secret Key Problem \uppercase\expandafter{\romannumeral1}}
-
-List ways in which secret keys can be distributed to two communicating parties.\\
+\textbf{4.} List ways in which secret keys can be distributed to two communicating parties.\\
 
 \textbf{Answer:}
 
@@ -136,9 +114,8 @@ follows:
 \item If A and B each has an encrypted connection to a third party C, C can deliver a key on the encrypted links to A and B.
 \end{enumerate}
 
-\subsection{Secret Key Problem \uppercase\expandafter{\romannumeral2}}
 
-NIST defines the term cryptoperiod as the time span during which a specific key is authorized for use or in which the keys for a given system or application may remain in effect. One document on key management uses the following time diagram for a shared secret key.
+\textbf{5.} NIST defines the term cryptoperiod as the time span during which a specific key is authorized for use or in which the keys for a given system or application may remain in effect. One document on key management uses the following time diagram for a shared secret key.
 
 \begin{figure}[htbp]
   \centering
@@ -151,11 +128,10 @@ Explain the overlap by giving an example application in which the originator¡¯s 
 
 \textbf{Answer:}
 
-When a symmetric key is used to protect stored information, the recipient usage period may start after the beginning of the originator usage period as shown in the figure. For example, information may be encrypted before being stored on a compact disk. At some later time, the key may be distributed in order to decrypt and recover the information.
+When a symmetric key is used to protect stored information, the recipient usage period may start after the beginning of the originator usage period as shown in the figure. For example, information may be encrypted before being stored on a compact disk. At some later time, the key may be distributed in order to decrypt and recover the information.\\
 
-\subsection{Components of PKI}
 
-What are the core components of a PKI? Briefly describe each component.\\
+\textbf{6.} What are the core components of a PKI? Briefly describe each component.\\
 
 \textbf{Answer:}
 
@@ -171,30 +147,27 @@ A typical PKI consists of seven core components. These are briefly described bel
 \item Policy (Certificate Policy and Certification Practice Statement): Certificate Policies and Certification Practice Statements are policy documents that define the procedures and practices to be employed in the use, administration and management of certificates within a PKI.
 \end{enumerate}
 
-\subsection{Effect of  Key Management on Symmetric Cryptography}
 
-Explain the problems with key management and how it affects symmetric cryptography.
+\textbf{7.} Explain the problems with key management and how it affects symmetric cryptography.
 
 \textbf{Note}: The remaining problems deal with the a cryptographic product developed by IBM, which is briefly described in a document at this book¡¯s Web site (IBMCrypto.pdf). Try these problems after reviewing the document.\\
 
 \textbf{Answer:}
 
 The primary weakness of symmetric encryption algorithms is keeping the single key secure. Known as key management, it poses a number of significant challenges. If a user wants to send an encrypted message to another using symmetric encryption, he must be sure that she has the key to decrypt the message. How should the first user get the key to the second user? He would not want to send it electronically through the Internet, because that would make it vulnerable to eavesdroppers. Nor can he encrypt the key and send it, because the
-recipient would need some way to decrypt the key. And if he can even get the get securely to the user, how can be he certain that an attacker has not seen the key on that person¡¯s computer? Key management is a significant impediment to using symmetric encryption.
+recipient would need some way to decrypt the key. And if he can even get the get securely to the user, how can be he certain that an attacker has not seen the key on that person¡¯s computer? Key management is a significant impediment to using symmetric encryption.\\
 
-\subsection{Session Key Problem}
 
-What is the effect of adding the instruction $EMK_i$
+\textbf{8.} What is the effect of adding the instruction $EMK_i$
 
 \centerline{$EMK_i: X \rightarrow E(KMH^i, X) i = 0, 1$}
 
 \textbf{Answer:}
 
-Adding $EMK_0$ would allow users to generate personal session keys, which could be exchanged, avoiding the necessity of storing a key variable in a user-to-user session.
+Adding $EMK_0$ would allow users to generate personal session keys, which could be exchanged, avoiding the necessity of storing a key variable in a user-to-user session.\\
 
-\subsection{IBM Cryptographic Subsystem \uppercase\expandafter{\romannumeral1}}
 
-The principal objective of the IBM Cryptographic Subsystem is to protect transmissions between a terminal and the processing system. Devise a procedure, perhaps adding instructions, which will allow the processor to generate a session key $KS$ and distribute it to Terminal $i$ and Terminal $j$ without having to store a key-equivalent variable in the host.\\
+\textbf{9.} The principal objective of the IBM Cryptographic Subsystem is to protect transmissions between a terminal and the processing system. Devise a procedure, perhaps adding instructions, which will allow the processor to generate a session key $KS$ and distribute it to Terminal $i$ and Terminal $j$ without having to store a key-equivalent variable in the host.\\
 
 \textbf{Answer:}
 
@@ -202,11 +175,10 @@ One solution is to add an instruction similar to $RFMK$ of the form:
 
 \centerline{$KEYGEN[RN, KMT_i, KMT_j]$}
 
-which will interpret $RN$ as $E(KMH0, KS)$ and return both $E(KMHi, KS)$ and $E(KMHj, KS)$, which are sent to the terminals $i$ and $j$, respectively. $RN$ need not be maintained at the host.
+which will interpret $RN$ as $E(KMH0, KS)$ and return both $E(KMHi, KS)$ and $E(KMHj, KS)$, which are sent to the terminals $i$ and $j$, respectively. $RN$ need not be maintained at the host.\\
 
-\subsection{IBM Cryptographic Subsystem \uppercase\expandafter{\romannumeral2}}
 
-Suppose $N$ different systems use the IBM Cryptographic Subsystem with host master keys $KMH[i](i=1,2,...N)$. Devise a method for communicating between systems without requiring the system to either share a common host master key or to divulge their individual host master keys.
+\textbf{10.} Suppose $N$ different systems use the IBM Cryptographic Subsystem with host master keys $KMH[i](i=1,2,...N)$. Devise a method for communicating between systems without requiring the system to either share a common host master key or to divulge their individual host master keys.
 
 \textbf{Hint}: each system needs three variants of its host master key.\\
 
@@ -232,11 +204,10 @@ A second translation function $RTMK$ (at Host $j$)
 \item[-] $RTMK[E[KMH_{j,2}, KMH(j, i)], E(KMH(i, j), KS)] ¡ú E(KMH_{j,0}, KS)]$
 \end{enumerate}
 
-which may be deciphered by a user at Host $j$.
+which may be deciphered by a user at Host $j$.\\
 
-\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral1}}
 
-Users A and B use the Diffie-Hellman key exchange technique with a common prime $q = 71$ and a primitive root $a = 7$.
+\textbf{11.} Users A and B use the Diffie-Hellman key exchange technique with a common prime $q = 71$ and a primitive root $a = 7$.
 
 \begin{enumerate}
 \item If user A has private key, what is A's public key $Y_A$?
@@ -247,15 +218,13 @@ Users A and B use the Diffie-Hellman key exchange technique with a common prime 
 \textbf{Answer:}
 
 \begin{enumerate}
-\item $Y_A = 7^5 mod 71= 51$.
-\item $Y_B = 7^{12} mod 71= 4$.
-\item $K = 4^5 mod 71= 30$.
+\item $Y_A = 7^5 \mod 71= 51$.
+\item $Y_B = 7^{12} \mod 71= 4$.
+\item $K = 4^5 \mod 71= 30$.
 \end{enumerate}
 
 
-\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral2}}
-
-Consider a Diffie-Hellman scheme with a common prime $q = 11$ and a primitive root $\alpha = 7$.
+\textbf{12.} Consider a Diffie-Hellman scheme with a common prime $q = 11$ and a primitive root $\alpha = 7$.
 
 \begin{enumerate}
 \item Show that 2 is a primitive root of 11.
@@ -267,30 +236,27 @@ Consider a Diffie-Hellman scheme with a common prime $q = 11$ and a primitive ro
 \textbf{Answer:}
 
 \begin{enumerate}
-\item $\phi(11) = 10$, $2^10 = 1024 = 1 mod 11$. If you check $2^n$ for $n < 10$, you will find that none of the values is $1 mod 11$.
-\item 6, because $2^6 mod 11 = 9$.
-\item $K = 3^6 mod 11= 3$.
+\item $\phi(11) = 10$, $2^{10} = 1024 = 1\mod 11$. If you check $2^n$ for $n < 10$, you will find that none of the values is $1 \mod 11$.
+\item 6, because $2^6 \mod 11 = 9$.
+\item $K = 3^6 \mod 11= 3$.
 \end{enumerate}
 
 
-\subsection{Diffie-Hellman Protocol Problem \uppercase\expandafter{\romannumeral1}}
-
-In the Diffie-Hellman protocol, each participant selects a secret number $x$ and sends the other participant $\alpha^x mod q$ for some public number $\alpha$. What would happen if the participants sent each other $x^{\alpha}$ for some public number $\alpha$ instead? Give at least one method Alice and Bob could use to agree on a key. Can Eve break your system without finding the secret numbers? Can Eve find the secret numbers?\\
+\textbf{13.} In the Diffie-Hellman protocol, each participant selects a secret number $x$ and sends the other participant $\alpha^x \mod q$ for some public number $\alpha$. What would happen if the participants sent each other $x^{\alpha}$ for some public number $\alpha$ instead? Give at least one method Alice and Bob could use to agree on a key. Can Eve break your system without finding the secret numbers? Can Eve find the secret numbers?\\
 
 \textbf{Answer:}
 
-For example, the key could be $x_A^gx_B^g = {\left( {{x_A}{x_B}} \right)^g}$. Of course, Eve can find that trivially just by multiplying the public information. In fact, no such system could be secure anyway, because Eve can find the secret numbers $x_A$ and $x_B$ by using Fermat¡¯s Little Theorem to take g-th roots.
+For example, the key could be $x_A^gx_B^g = {\left( {{x_A}{x_B}} \right)^g}$. Of course, Eve can find that trivially just by multiplying the public information. In fact, no such system could be secure anyway, because Eve can find the secret numbers $x_A$ and $x_B$ by using Fermat¡¯s Little Theorem to take g-th roots.\\
 
-\subsection{Diffie-Hellman Protocol Problem \uppercase\expandafter{\romannumeral2}}
 
-This problem illustrates the point that the Diffie-Hellman protocol is not secure without the step where you take the modulus; i.e. the "Indiscrete Log Problem" is not a hard problem! You are Eve and have captured Alice and Bob and imprisoned them. You overhear the following dialog.
+\textbf{14.} This problem illustrates the point that the Diffie-Hellman protocol is not secure without the step where you take the modulus; i.e. the "Indiscrete Log Problem" is not a hard problem! You are Eve and have captured Alice and Bob and imprisoned them. You overhear the following dialog.
 
-\begin{enumerate}
+\begin{itemize}
 \item\textbf{Bob}: Oh, let's not bother with the prime in the Diffie-Hellman protocol, it will make things easier.
 \item\textbf{Alice}: Okay, but we still need a base $\alpha$ to raise things to. How about $g = 3$?
 \item\textbf{Bob}: All right, then my result is 27.
 \item\textbf{Alice}: And mine is 243.
-\end{enumerate}
+\end{itemize}
 
 What is Bob's secret and Alice's secret? What is their secret combined key? (Don't forget to show your work.)\\
 
@@ -302,14 +268,13 @@ What is Bob's secret and Alice's secret? What is their secret combined key? (Don
 \item The secret combined key is $(3^3)^5 = 3^{15} = 14348907$.
 \end{enumerate}
 
-\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral3}}
 
-We describes a man-in-the-middle attack on the Diffie-Hellman key exchange protocol in which the adversary generates two public¨Cprivate key pairs for
+\textbf{15.} We describes a man-in-the-middle attack on the Diffie-Hellman key exchange protocol in which the adversary generates two public¨Cprivate key pairs for
 the attack. Could the same attack be accomplished with one pair? Explain.\\
 
 \textbf{Answer:}
 
-\begin{enumerate}
+\begin{itemize}
 \item Darth prepares for the attack by generating a random private key $X_D$ and then computing the corresponding public key $Y_D$.
 \item Alice transmits $Y_A$ to Bob.
 \item Darth intercepts $Y_A$ and transmits $Y_D$ to Bob. Darth also calculates $K2 = {\left( {{Y_A}} \right)^{{X_D}}}\bmod q$.
@@ -317,11 +282,10 @@ the attack. Could the same attack be accomplished with one pair? Explain.\\
 \item Bob transmits $Y_A$ to Alice.
 \item Darth intercepts $Y_A$ and transmits $Y_D$ to Alice. Darth calculates $K1 = {\left( {{Y_B}} \right)^{{X_D}}}\bmod q$.
 \item Alice receives $Y_D$ and calculates $K2 = {\left( {{Y_D}} \right)^{{X_A}}}\bmod q$.
-\end{enumerate}
+\end{itemize}
 
-\subsection{ElGamal Scheme Problem}
 
-Consider an ElGamal scheme with a common prime $q = 71$ and a primitive root $\alpha = 7$.
+\textbf{16.} Consider an ElGamal scheme with a common prime $q = 71$ and a primitive root $\alpha = 7$.
 
 \begin{enumerate}
 \item If B has public key $Y_B = 3$ and A chose the random integer $k = 2$, what is the ciphertext of $M = 30$?
@@ -335,9 +299,8 @@ Consider an ElGamal scheme with a common prime $q = 71$ and a primitive root $\a
 \item $C^2 = 29$.
 \end{enumerate}
 
-\subsection{Elliptic Curves Problem \uppercase\expandafter{\romannumeral1}}
 
-Rule (5) for doing arithmetic in elliptic curves over real numbers states that to double a point $Q2$, draw the tangent line and find the other point of intersection $S$. Then $Q+Q=2Q=-S$. If the tangent line is not vertical, there will be exactly one point of intersection. However, suppose the tangent line is vertical? In that case, what is the value $2Q$? What is the value $3Q$?\\
+\textbf{17.} Rule (5) for doing arithmetic in elliptic curves over real numbers states that to double a point $Q2$, draw the tangent line and find the other point of intersection $S$. Then $Q+Q=2Q=-S$. If the tangent line is not vertical, there will be exactly one point of intersection. However, suppose the tangent line is vertical? In that case, what is the value $2Q$? What is the value $3Q$?\\
 
 \textbf{Answer:}
 
@@ -346,9 +309,7 @@ Rule (5) for doing arithmetic in elliptic curves over real numbers states that t
 \item $3Q = 2Q + Q = O + Q = Q$.
 \end{enumerate}
 
-\subsection{Elliptic Curves Problem \uppercase\expandafter{\romannumeral2}}
-
-Demonstrate that the two elliptic curves of Figure \ref{7-1}, \ref{7-2} each satisfy the conditions for a group over the real numbers.
+\textbf{18.} Demonstrate that the two elliptic curves of Figure \ref{7-1}, \ref{7-2} each satisfy the conditions for a group over the real numbers.
 
 \begin{figure}[htbp]
   \centering
@@ -382,23 +343,19 @@ Then,
 \item For $y^2 = x^3 + x + 1$, we have $4(1)^3 + 27(1) = 21 \neq 0$.
 \end{enumerate}
 
-\subsection{Public-key Certificate Scheme}
-
-What are the requirements for the use of a public-key certificate scheme?\\
+\textbf{19.} What are the requirements for the use of a public-key certificate scheme?\\
 
 
 \textbf{Answer:}
 
 \begin{enumerate}
-\item Any participant can read a certificate to determine the name and public key of the certificate's owner. 
+\item Any participant can read a certificate to determine the name and public key of the certificate's owner.
 \item Any participant can verify that the certificate originated from the certificate authority and is not counterfeit.
 \item Only the certificate authority can create and update certificates.
 \item Any participant can verify the currency of the certificate.
 \end{enumerate}
 
-\subsection{Public-key Directory}
-
-What are the essential ingredients of a public-key directory?\\
+\textbf{20.} What are the essential ingredients of a public-key directory?\\
 
 \textbf{Answer:}
 
@@ -409,14 +366,6 @@ What are the essential ingredients of a public-key directory?\\
 \item Periodically, the authority publishes the entire directory or updates to the directory. For example, a hard-copy version much like a telephone book could be published, or updates could be listed in a widely circulated newspaper.
 \item Participants could also access the directory electronically. For this purpose, secure, authenticated communication from the authority to the participant is mandatory.
 \end{enumerate}
-
-
-\section{virus}
-\label{sec:vs}
-
-
-\section{Cryptographic Checksums}
-\label{sec:checksums}
 
 
 \end{document}

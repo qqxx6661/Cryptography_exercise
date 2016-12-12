@@ -1,0 +1,278 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%       TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{
+\normalfont \normalsize
+\textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Cryptography Exercises \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Mengjie Duan} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\section{Symmetric Key Cryptosystem}
+\label{sec:km}
+
+\textbf{1.} What is the difference between diffusion and confusion?
+\\
+
+\textbf{Answer:}
+\\
+
+In \textbf{diffusion}, the statistical structure of the plaintext is dissipated into long-range statistics of the ciphertext. This is achieved by having each plaintext digit affect the value of many ciphertext digits, which is equivalent to saying that each ciphertext digit is affected by many plaintext digits. \\
+\textbf{Confusion} seeks to make the relationship between the statistics of the ciphertext and the value of the encryption key as complex as possible, again to thwart attempts to discover the key. Thus, even if the attacker can get some handle on the statistics of the ciphertext, the way in which the key was used to produce that ciphertext is so complex as to make it difficult to deduce the key. This is achieved by the use of a complex substitution algorithm.
+\\
+
+\textbf{2.} Which parameters and design choices determine the actual algorithm of a Feistel cipher?
+\\
+
+\textbf{Answer:}
+\begin{enumerate}
+\item \textbf{Block size}: Larger block sizes mean greater security (all other things being equal) but reduced encryption/decryption speed.
+\item \textbf{Key size}: Larger key size means greater security but may decrease encryption/decryption speed.
+\item \textbf{Number of rounds}: The essence of the Feistel cipher is that a single round offers inadequate security but that multiple rounds offer increasing security. 
+\item \textbf{Subkey generation algorithm}: Greater complexity in this algorithm should lead to greater difficulty of cryptanalysis.
+\item \textbf{Round function}: Again, greater complexity generally means greater resistance to cryptanalysis. 
+\item \textbf{Fast software encryption/decryption}: In many cases, encryption is embedded in applications or utility functions in such a way as to preclude a hardware implementation. Accordingly, the speed of execution of the algorithm becomes a concern. 
+\item \textbf{Ease of analysis}: Although we would like to make our algorithm as difficult as possible to cryptanalyze, there is great benefit in making the algorithm easy to analyze. That is, if the algorithm can be concisely and clearly explained, it is easier to analyze that algorithm for cryptanalytic vulnerabilities and therefore develop a higher level of assurance as to its strength.
+\end{enumerate}
+
+\textbf{3.} What is the purpose of the S-boxes in DES?\\
+
+\textbf{Answer:}\\
+
+The S-box is a substitution function that introduces nonlinearity and adds to the complexity of the transformation.\\
+
+\textbf{4.} Consider a Feistel cipher composed of sixteen rounds with a block length of 128 bits and a key length of 128 bits. Suppose that, for a given $k$, the key scheduling algorithm determines values for the first eight round keys, $k_{1}$, $k_{2}$,$\cdots$, $k_{8}$, and then sets
+\begin{center}
+$k_{9}=k_{8},k_{10}=k_{7},k_{11}=k_{6},...,k_{16}=k_{1}$
+\end{center}
+Suppose you have a ciphertext $c$. Explain how, with access to an encryption oracle, you can decrypt $c$ and determine $m$ using just a single oracle query. This shows that such a cipher is vulnerable to a chosen plaintext attack. (An encryption oracle can be thought of as a device that, when given a plaintext, returns the corresponding ciphertext. The internal details of the device are not known to you and you cannot break open the device.You can only gain information from the oracle by making queries to it and observing its responses.)\\
+
+\textbf{Answer:}\\
+
+Because of the key schedule, the round functions used in rounds 9 through 16 are mirror images of the round functions used in rounds 1 through 8. From this fact we see that encryption and decryption are identical. We are given a ciphertext $c$. Let $m' = c$. Ask the encryption oracle to encrypt m'. The ciphertext returned by the oracle will be the decryption of $c$.\\
+
+\textbf{5.} Show that in DES the first 24 bits of each subkey come from the same subset of 28 bits of the initial key and that the second 24 bits of each subkey come from a disjoint subset of 28 bits of the initial key.\\
+
+\textbf{Answer:}\\
+
+The result can be demonstrated by tracing through the way in which the bits are used. An easy, but not necessary, way to see this is to number the 64 bits of the key as follows (read each vertical column of 2 digits as a number):
+\begin{center}
+2113355-1025554-0214434-1123334-0012343-2021453-0202435-0110454-
+1031975-1176107-2423401-7632789-7452553-0858846-6836043-9495226-
+\end{center}
+The first bit of the key is identified as 21, the second as 10, the third as 13, and so on. The eight bits that are not used in the calculation are unnumbered. The numbers 01 through 28 and 30 through 57 are used. The reason for this assignment is to clarify the way in which the subkeys are chosen. With this assignment, the subkey for the first iteration contains 48 bits, 01 through 24 and 30 through 53, in their natural numerical order. It is easy at this point to see that the first 24 bits of each subkey will always be from the bits designated 01 through 28, and the second 24 bits of each subkey will always be from the bits designated 30 through 57.\\
+
+\textbf{6.} What was the original set of criteria used by NIST to evaluate candidate AES ciphers?\\
+
+\textbf{Answer:}
+\begin{enumerate}
+\item \textbf{Security}: Actual security; randomness; soundness, other security factors.
+\item \textbf{Cost}: Licensing requirements; computational efficiency; memory requirements.
+\item \textbf{Algorithm and Implementation Characteristics}: Flexibility; hardware and software suitability; simplicity.
+\end{enumerate}
+
+\textbf{7.} What is the difference between Rijndael and AES?\\
+
+\textbf{Answer:}\\
+
+Rijndael allows for block lengths of 128, 192, or 256 bits. AES allows only a block length of 128 bits.\\
+
+\textbf{8.} How is the S-box constructed?\\
+
+\textbf{Answer:}
+\begin{enumerate}
+\item Initialize the S-box with the byte values in ascending sequence row by row. The first row contains \{00\}, \{01\}, \{02\}, etc., the second row contains \{10\}, \{11\}, etc., and so on. Thus, the value of the byte at row $x$, column $y$ is \{$xy$\}.
+\item Map each byte in the S-box to its multiplicative inverse in the finite field GF($2^{8}$); the value \{00\} is mapped to itself.
+\item Consider that each byte in the S-box consists of 8 bits labeled ($b_{7}, b_{6}, b_{5}, b_{4}, b_{3}, b_{2}, b_{1}, b_{0}$). Apply the following transformation to each bit of each byte in the S-box:
+\begin{center}
+$b_{i}=b_{i}\oplus b_{(i+4)mod 8}\oplus b_{(i+5)mod 8}\oplus b_{(i+6)mod 8}\oplus b_{(i+7)mod 8}\oplus c_{i}$
+\end{center}
+
+where $c_{i}$ is the $i$th bit of byte $c$ with the value \{63\}; that is, ($c_{7}, c_{6}, c_{5}, c_{4}, c_{3}, c_{2}, c_{1}, c_{0}$) = (01100011). The prime (') indicates that the variable is to be updated by the value on the right.
+\end{enumerate}
+
+
+\textbf{9.} How many bytes in \textbf State are affected by ShiftRows?\\
+
+\textbf{Answer:}\\
+
+The first row of \textbf State is not altered. For the second row, a 1-byte circular left shift is performed. For the third row, a 2-byte circular left shift is performed. For the third row, a 3-byte circular left shift is performed.\\
+
+
+\textbf{10.} What is the difference between the AES decryption algorithm and the equivalent inverse cipher?\\
+
+\textbf{Answer:}\\
+
+For the AES decryption algorithm, the sequence of transformations for decryption differs from that for encryption, although the form of the key schedules for encryption and decryption is the same. The equivalent version has the same sequence of transformations as the encryption algorithm (with transformations replaced by their inverses). To achieve this equivalence, a change in key schedule is needed.\\
+
+
+\textbf{11.} Compare AES to DES. For each of the following elements of DES, indicate the comparable element in AES or explain why it is not needed in AES.
+\begin{enumerate}
+\renewcommand\theenumi{\alph{enumi}}
+\item XOR of subkey material with the input to the f function
+\item XOR of the f function output with the left half of the block
+\item f function
+\item permutation P
+\item swapping of halves of the block
+\end{enumerate}
+
+\textbf{Answer:}\\
+\begin{enumerate}
+\renewcommand\theenumi{\alph{enumi}}
+\item AddRoundKey
+\item The MixColumn step, because this is where the different bytes interact with each other.
+\item The ByteSub step, because it contributes nonlinearity to AES.
+\item The ShiftRow step, because it permutes the bytes.
+\item There is no wholesale swapping of rows or columns. AES does not require this step because: The MixColumn step causes every byte in a column to alter every other byte in the column, so there is not need to swap rows; The ShiftRow step moves bytes from one column to another, so there is no need to swap columns
+\end{enumerate}
+
+\textbf{12.} In the subsection on implementation aspects, it is mentioned that the use of tables helps thwart timing attacks. Suggest an alternative technique.\\
+
+\textbf{Answer:}\\
+
+The primary issue is to assure that multiplications take a constant amount of time, independent of the value of the argument. This can be done by adding no-operation cycles as needed to make the times uniform.\\
+
+\textbf{13.} In the subsection on implementation aspects, a single algebraic equation is developed that describes the four stages of a typical round of the encryption algorithm. Provide the equivalent equation for the tenth round.\\
+
+\textbf{Answer:}
+\begin{center}
+
+$\begin{pmatrix}
+e_{0,j}\\
+e_{1,j}\\
+e_{2,j}\\
+e_{3,j}\\
+\end{pmatrix}=
+\begin{pmatrix}
+S{[a_{0,j}]}\\
+S{[a_{1,j-1}]}\\
+S{[a_{2,j-2}]}\\
+S{[a_{3,j-3}]}\\
+\end{pmatrix}\oplus
+\begin{pmatrix}
+k_{0,j}\\
+k_{1,j}\\
+k_{2,j}\\
+k_{3,j}\\
+\end{pmatrix}$
+
+\end{center}
+
+
+\textbf{14.} Show that the matrix given here, with entries in $GF(2^{4})$, is the inverse of the matrix used in the MixColumns step of S-AES.
+\begin{center}
+$\begin{pmatrix}
+x^{3}+1 & x\\
+x & x^{3}+1
+\end{pmatrix}$
+\end{center}
+
+\textbf{Answer:}\\
+
+$\begin{pmatrix}
+x^{3}+1 & x\\
+x & x^{3}+1
+\end{pmatrix}
+\begin{pmatrix}
+1 & x^{2}\\
+x^{2} & 1
+\end{pmatrix}=
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}
+$\\
+
+
+\textbf{15.} What is triple encryption?\\
+
+\textbf{Answer:}\\
+
+With triple encryption, a plaintext block is encrypted by passing it through an encryption algorithm; the result is then passed through the same encryption algorithm again; the result of the second encryption is passed through the same encryption algorithm a third time. Typically, the second stage uses the decryption algorithm rather than the encryption algorithm.\\
+
+
+\textbf{16.} Why is the middle portion of 3DES a decryption rather than an encryption?\\
+
+\textbf{Answer:}\\
+
+There is no cryptographic significance to the use of decryption for the second stage. Its only advantage is that it allows users of 3DES to decrypt data encrypted by users of the older single DES by repeating the key.\\
+
+\textbf{17.} What is a meet-in-the-middle attack?\\
+
+\textbf{Answer:}\\
+
+This is an attack used against a double encryption algorithm and requires a known (plaintext, ciphertext) pair. In essence, the plaintext is encrypted to produce an intermediate value in the double encryption, and the ciphertext is decrypted to produce an intermediation value in the double encryption. Table lookup techniques can be used in such a way to dramatically improve on a brute-force try of all pairs of keys.\\
+
+\textbf{18.} Is it possible to perform encryption operations in parallel on multiple blocks of plaintext in CBC mode? How about decryption?\\
+
+\textbf{Answer:}\\
+
+Nine plaintext characters are affected.  The plaintext character corresponding to the ciphertext character is obviously altered. In addition, the altered ciphertext character enters the shift register and is not removed until the next eight characters are processed.\\
+
+\textbf{19.} For the ECB, CBC, and CFB modes, the plaintext must be a sequence of one or more complete data blocks (or, for CFB mode, data segments). In other words, for these three modes, the total number of bits in the plaintext must be a positive multiple of the block (or segment) size. One common method of padding, if needed, consists of a 1 bit followed by as few zero bits, possibly none, as are necessary to complete the final block. It is considered good practice for the sender to pad every message, including messages in which the final message block is already complete.What is the motivation for including a padding block when padding is not needed?\\
+
+
+\textbf{Answer:}\\
+
+After decryption, the last byte of the last block is used to determine the amount of padding that must be stripped off. Therefore there must be at least one byte of padding.\\
+
+\textbf{20.} Use the key 1010 0111 0011 1011 to encrypt the plaintext “ok” as expressed in ASCII as 0110 1111 0110 1011. The designers of S-AES got the ciphertext 0000 0111 0011 1000. Do you?\\
+
+\textbf{Answer:}\\
+
+\textbf{Key expansion}:
+\par\setlength\parindent{1em} W0 = 1010 0111 W1 = 0011 1011 W2 = 0001 1100 W3 = 0010 0111
+\par\setlength\parindent{1em}W4 = 0111 0110 W5 = 0101 0001\\
+\textbf{Round 0}:
+\par\setlength\parindent{1em}After Add round key: 1100 1000 0101 0000\\
+\textbf{Round 1}:
+\par\setlength\parindent{1em}After Substitute nibbles: 1100 0110 0001 1001
+\par\setlength\parindent{1em}After Shift rows: 1100 1001 0001 0110
+\par\setlength\parindent{1em}After Mix columns: 1110 1100 1010 0010
+\par\setlength\parindent{1em}After Add round key: 1110 1100 1010 0010\\
+\textbf{Round 2}:
+\par\setlength\parindent{1em}After Substitute nibbles: 1111 0000 1000 0101
+\par\setlength\parindent{1em}After Shift rows: 0111 0001 0110 1001
+\par\setlength\parindent{1em}After Add round key: 0000 0111 0011 1000\\
+
+\end{document}
