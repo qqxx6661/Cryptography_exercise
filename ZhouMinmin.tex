@@ -1,0 +1,323 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%       TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{
+\normalfont \normalsize
+\textsc{Jiangsu University, school of Computer Science and Communication Engineering} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Exercises \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Zhendong Yang} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+\section{Symmetric key cryptosystem}
+\label{sec:skc}
+everyone should writes a distinct section provided with 20 excercise.
+\section{Public key cryptosystem}
+\label{sec:pkc}
+
+\section{Access control}
+
+\section{Classic cryptography}
+\label{sec:cc}
+
+\section{Digital signature}
+\label{sec:ds}
+
+\section{Confidentiality and integrity policies}
+
+\section{Key Management}
+\label{sec:km}
+\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral1}}
+
+Users A and B use the Diffie-Hellman key exchange technique with a common prime $q = 71$ and a primitive root $a = 7$.
+
+Question:
+\begin{enumerate}
+\item If user A has private key, what is A's public key $Y_A$?
+\item If user B has private key, what is B's public key $Y_B$?
+\item  What is the shared secret key?
+\end{enumerate}
+
+Answer:
+\begin{enumerate}
+\item $Y_A = 7^5 mod 71= 51$.
+\item $Y_B = 7^{12} mod 71= 4$.
+\item $K = 4^5 mod 71= 30$.
+\end{enumerate}
+
+
+\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral2}}
+
+Consider a Diffie-Hellman scheme with a common prime $q = 11$ and a primitive root $\alpha = 7$.
+
+Question:
+\begin{enumerate}
+\item Show that 2 is a primitive root of 11.
+\item If user A has public key $Y_A = 9$, what is A¡¯s private key $X_A$?
+\item If user B has public key $Y_B = 3$, what is the secret key $K$ shared with $A$?
+\end{enumerate}
+
+
+Answer:
+\begin{enumerate}
+\item $\phi(11) = 10$, $2^10 = 1024 = 1 mod 11$. If you check $2^n$ for $n < 10$, you will find that none of the values is $1 mod 11$.
+\item 6, because $2^6 mod 11 = 9$.
+\item $K = 3^6 mod 11= 3$.
+\end{enumerate}
+
+
+\subsection{Diffie-Hellman Protocol Problem \uppercase\expandafter{\romannumeral1}}
+
+In the Diffie-Hellman protocol, each participant selects a secret number $x$ and sends the other participant $\alpha^x mod q$ for some public number $\alpha$. What would happen if the participants sent each other $x^{\alpha}$ for some public number $\alpha$ instead? Give at least one method Alice and Bob could use to agree on a key. Can Eve break your system without finding the secret numbers? Can Eve find the secret numbers?
+
+Answer:
+
+For example, the key could be $x_A^gx_B^g = {\left( {{x_A}{x_B}} \right)^g}$. Of course, Eve can find that trivially just by multiplying the public information. In fact, no such system could be secure anyway, because Eve can find the secret numbers $x_A$ and $x_B$ by using Fermat¡¯s Little Theorem to take g-th roots.
+
+\subsection{Diffie-Hellman Protocol Problem \uppercase\expandafter{\romannumeral2}}
+
+This problem illustrates the point that the Diffie-Hellman protocol is not secure without the step where you take the modulus; i.e. the "Indiscrete Log Problem" is not a hard problem! You are Eve and have captured Alice and Bob and imprisoned them. You overhear the following dialog.
+
+\begin{enumerate}
+\item\textbf{Bob}: Oh, let's not bother with the prime in the Diffie-Hellman protocol, it will make things easier.
+\item\textbf{Alice}: Okay, but we still need a base $\alpha$ to raise things to. How about $g = 3$?
+\item\textbf{Bob}: All right, then my result is 27.
+\item\textbf{Alice}: And mine is 243.
+\end{enumerate}
+
+What is Bob's secret and Alice's secret? What is their secret combined key? (Don't forget to show your work.)
+
+Answer:
+\begin{enumerate}
+\item $x_B = 3$.
+\item $x_A = 5$.
+\item the secret combined key is $(3^3)^5 = 3^{15} = 14348907$.
+\end{enumerate}
+
+\subsection{Diffie-Hellman Key Exchange Problem \uppercase\expandafter{\romannumeral2}}
+
+We describes a man-in-the-middle attack on the Diffie-Hellman key exchange protocol in which the adversary generates two public¨Cprivate key pairs for
+the attack. Could the same attack be accomplished with one pair? Explain.
+
+Answer:
+\begin{enumerate}
+\item Darth prepares for the attack by generating a random private key $X_D$ and then computing the corresponding public key $Y_D$.
+\item Alice transmits $Y_A$ to Bob.
+\item Darth intercepts $Y_A$ and transmits $Y_D$ to Bob. Darth also calculates $K2 = {\left( {{Y_A}} \right)^{{X_D}}}\bmod q$.
+\item Bob receives $Y_D$ and calculates $K1 = {\left( {{Y_D}} \right)^{{X_B}}}\bmod q$.
+\item Bob transmits $Y_A$ to Alice.
+\item Darth intercepts $Y_A$ and transmits $Y_D$ to Alice. Darth calculates $K1 = {\left( {{Y_B}} \right)^{{X_D}}}\bmod q$.
+\item Alice receives $Y_D$ and calculates $K2 = {\left( {{Y_D}} \right)^{{X_A}}}\bmod q$.
+\end{enumerate}
+
+\section{virus}
+\label{sec:vs}
+
+1.What is the role of compression in the operation of a virus?
+Answer:\\
+ A virus may use compression so that the infected program is exactly the same length as an uninfected version.\\\\
+
+
+
+2.What is the role of encryption in the operation of a virus?
+Answer:\\
+A portion of the virus, generally called a mutation engine, creates a random encryption key to encrypt the remainder of the virus. The key is stored with the virus, and the mutation engine itself is altered. When an infected program is invoked, the virus uses the stored random key to decrypt the virus. When the virus replicates, a different random key is selected.\\\\
+
+
+3.What are typical phases of operation of a virus or worm?
+Answer:\\
+A dormant phase, a propagation phase, a triggering phase, and an execution phase.\\\\
+
+
+4.What is a digital immune system?
+Answer:\\
+A digital immune system provides a general-purpose emulation and virusdetection system. The objective is to provide rapid response time so that viruses can be stamped out almost as soon as they are introduced. When a new virus enters an organization, the immune system automatically captures it, analyzes it, adds detection and shielding for it, removes it, and passes information about that virus to systems running a general antivirus program so that it can be detected before it is allowed to run elsewhere.\\\\
+
+
+5.How does behavior-blocking software work?
+Answer:\\
+Behavior-blocking software integrates with the operating system of a host computer and monitors program behavior in real-time for malicious actions. The behavior blocking software then blocks potentially malicious actions before they
+have a chance to affect the system.\\\\
+
+
+
+6.In general terms, how does a worm propagate?
+Answer:
+\begin{enumerate}
+\item Search for other systems to infect by examining host tables or similar repositories of remote system addresses.
+\item Establish a connection with a remote system.
+\item Copy itself to the remote system and cause the copy to be run.
+\end{enumerate}
+
+
+
+7.Describe some worm countermeasures.
+Answer:
+\begin{enumerate}
+\item Signature-based worm scan filtering: This type of approach generates a worm signature, which is then used to prevent worm scans from entering/leaving a network/host. Typically, this approach involves identifying suspicious flows and generating a worm signature. This approach is vulnerable to the use of polymorphic worms: Either the detection software misses the worm or, if it is sufficiently sophisticated to deal with polymorphic worms, the scheme may take a long time to react. [NEWS05] is an example of this approach.
+\item Filter-based worm containment: This approach is similar to class A but focuses on worm content rather than a scan signature. The filter checks a message to determine if it contains worm code. An example is Vigilante [COST05], which relies on collaborative worm detection at end hosts. This approach can be quite effective but requires efficient detection algorithms and rapid alert dissemination.
+\item Payload-classification-based worm containment: These network-based techniques examine packets to see if they contain a worm. Various anomaly detection techniques can be used, but care is needed to avoid high levels of false positives or negatives. An example of this approach is reported in [CHIN05], which looks for exploit code in network flows. This approach does not generate signatures based on byte patterns but rather looks for control and data flow structures that suggest an exploit.
+\item Threshold random walk (TRW) scan detection: TRW exploits randomness in picking destinations to connect to as a way of detecting if a scanner is in operation [JUNG04]. TRW is suitable for deployment in high-speed, low-cost network devices. It is effective against the common behavior seen in worm scans.
+\item Rate limiting: This class limits the rate of scanlike traffic from an infected host. Various strategies can be used, including limiting the number of new machines a host can connect to in a window of time, detecting a high connection failure rate, and limiting the number of unique IP addresses a host can scan in a window of time. [CHEN04] is an example. This class of countermeasures may introduce longer delays for normal traffic. This class is also not suited for slow, stealthy worms that spread slowly to avoid detection based on activity level.
+\item Rate halting: This approach immediately blocks outgoing traffic when a threshold is exceeded either in outgoing connection rate or diversity of connection attempts [JHI07]. The approach must include measures to quickly unblock mistakenly blocked hosts in a transparent way. Rate halting can integrate with a signature- or filter-based approach so that once a signature or filter is generated, every blocked host can be unblocked. Rate halting appears to offer a very effective countermeasure. As with rate limiting, rate-halting techniques are not suitable for slow, stealthy worms.
+\end{enumerate}
+
+
+
+8.What is a DDoS?
+Answer:\\
+A denial of service (DoS) attack is an attempt to prevent legitimate users of a service from using that service. When this attack comes from a single host or network node, then it is simply referred to as a DoS attack. A more serious threat is posed by a DDoS attack. In a DDoS attack, an attacker is able to recruit a number of hosts throughout the Internet to simultaneously or in a coordinated fashion launch an attack upon the target.
+
+
+
+9.What is the essential difference between the computer virus and the biological virus?
+Answer:\\
+Computer virus refers to a kind of program code that can cause computer failure, damage to computer data, make bad impact on normal use of computer ,and having the ability of self-replication.\\
+Biological viruses are organisms that can reproduce in a unique way and are strictly parasitic. They are in the form of material.\\
+The former is a string of digital programs or coding that used in omputers , which actually invisible, and they¡¯re virtual digital things with non-life forms; the latter is in the sense of the body which can be observed with the actual existence of the physical, life forms.\\\\
+
+
+
+10.What is the basic characteristics of instant messaging virus? 
+Answer:\\
+Mainly existed in Trojans and worms. Trojan viruses allow attackers to hijack victims of their instant messaging software clients, and worms take the initiative to send a file containing infected attachments or phishing sites hyperlink to those victims by obtaining their contact list. Since these fraudulent messages appear to be from the victim's own on the surface, so it is easy to blind the recipients of the message, making them to believe that it is safe to open the infected file or click on the hyperlink in the message.\\\\
+
+
+
+11.What is the spread of instant messaging virus? 
+Answer:\\
+Most instant messaging viruses will get the hosters¡¯ list of friends, and automatically send text messages or files to it, resulting in a large number of local system and network resources are occupied,as well as paralysis or performance degradation. The virus will automatically send a chat message with a malicious link, once the recipient clicked on the link, there may be malicious code attacks. Viruses sent by the message attachments often contain viruses, once the recipient running, it will release the Trojans or backdoor virus, so that can the attacker obtain remote control of the victim host permissions.\\\\
+
+
+
+12.Give a briefly description of the Principle and Implementation of Backdoor Computer Virus.
+Answer: \\
+A backdoor is a function within a program or system that allows a user without an account or a general limited user to use a high-level or even full control of system . Method to realize are as follows:\\
+\begin{enumerate}
+\item Open a random port by rebooting a Trojan.
+\item Tunnel intrusion.
+\item Use a special ICMP to carry the data back door.
+\end{enumerate}
+
+
+
+13.Analyze the transmission mechanism of computer virus. \\
+Answer:\\
+Computer virus copied directly from the USB station to the server.\\
+Computer virus first infected workstation, workstation memory resident, and then transmitted to the server while running the network disk program.\\
+Computer virus first infected workstation, workstation memory resident, and then infect the server through the image path while running the computer virus directly.\\
+If the remote workstation has already been intruded by a computer virus, computer viruses can also communicate through the exchange of data into the network server.\\\\
+
+
+
+14.The list of passwords used by the Morris worm is provided at this book¡¯s Web site.\\
+\textbf{a}. The assumption has been expressed by many people that this list represents words commonly used as passwords. Does this seem likely? Justify your answer.\\
+\textbf{b}. If the list does not reflect commonly used passwords, suggest some approaches that Morris may have used to construct the list.\\
+
+Answer:\\
+\textbf{a}. The following is from Spafford, E. `` The Internet Worm Program: An Analysis.'' Purdue Technical Report CSD-TR-823
+Common choices for passwords usually include fantasy characters, but this list contains none of the likely choices (e.g., ``hobbit,'' ``dwarf,'' ``gandalf,'' ``skywalker,'' ``conan''). Names of relatives and friends are often used, and we see women's names like ``jessica,'' ``caroline,'' and ``edwina,'' but no instance of the common names ``jennifer'' or ``kathy.'' Further, there are almost no men's names such as ``thomas'' or either of ``stephen'' or ``steven'' (or ``eugene''!). Additionally, none of these have the initial letters capitalized, although that is often how they are used in passwords. Also of interest, there are no obscene words in this dictionary, yet many reports of concerted password cracking experiments have revealed that there are a significant number of users who use such words (or phrases) as passwords. The list contains at least one incorrect spelling: ``commrades'' instead of ``comrades''; I also believe that ``markus'' is a misspelling of ``marcus.'' Some of the words do not appear in standard dictionaries and are non-English names: ``jixian,'' ``vasant,'' ``puneet,'' etc. There are also some unusual words in this list that I would not expect to be considered common: ``anthropogenic,'' ``imbroglio,'' ``umesh,'' ``rochester,'' ``fungible,'' ``cerulean,'' etc.\\
+
+\textbf{b.} Again, from Spafford: I imagine that this list was derived from some data gathering with a limited set of passwords, probably in some known (to the author) computing environment. That is, some dictionary-based or brute-force attack
+was used to crack a selection of a few hundred passwords taken from a small set of machines. Other approaches to gathering passwords could also have been used 320 Ethernet monitors, Trojan Horse login programs, etc. However they may have been cracked, the ones that were broken would then have been added to this dictionary. Interestingly enough, many of these words are not in the standard on-line dictionary (in /usr/dict/words). As such, these words are useful as a supplement to the main dictionary-based attack the worm used as strategy \#4, but I would suspect them to be of limited use before that time.\\\\
+
+
+
+15.Suggest some methods of attacking the PWC worm defense that could be used by worm creators and suggest countermeasures to these methods.
+Answer:\\
+One approach is to send out false alerts. This would cause alerted systems to shut down traffic incorrectly. If the spoofed alerts come from an external (to the network) source, the firewall can filter them. Also, authentication schemes can prevent the attack. Alternatively, the attacker can first compromise an internal host and then forge an alert. If an authentication scheme is used, this attack can only succeed if the spoofer has access to keys. This creates a higher hurdle for the attacker. Another approach: if an attacker is aware of the use of PWC, the worm could be designed to try to thwart the timing analysis of the PWC agents. This appears to be very difficult because you have multiple cooperating agents and if the worm is to propagate in a reasonable time, sooner or later, worm propagation attempts must be made.\\\\
+
+
+
+16.What are the characteristics of computer virus?\\
+Answer:
+\begin{enumerate}
+\item Infectious: The virus spreads from infected computers through various channels to uninfected computers.
+\item Concealment: The virus is generally a high programming skills, short and pithy code, hiding in the legal process.It is difficult for us to distinguish it from normal procedures.
+\item Latency: The virus into the system generally does not immediately attack,it can hide for some time, silently spread the infection.So it was not so easy to be found. Once the triggering conditions are satisfied, the attack occurs.
+\item  Polymorphism: The virus attempts to change the morphology at each infection; making it difficult to detect.In this case, the main part of the virus code is the same, but the expression has changed.
+\item Destructive: The virus will be triggered once the trigger and produce damaging effects. Such as the destruction of data or reduce system performance, or even damage the hardware.
+\end{enumerate}
+
+
+
+17.What are several architecture of the firewalls? What is the role of the bastion host? What are the main methods in detecting computer viruses?\\
+Answer:
+\begin{enumerate}
+\item  Firewalls include: packet filtering firewall, dual host host firewall, shielding host firewall, shield subnet firewall.
+\item  The role of the bastion host are:\\\textcircled{1} bastion host is an enhanced, is exposed outside the protected network can prevent attacks on the computer . Bastion host running firewall software, you can forward the application, providing services.\\\textcircled{2} bastion host installed on the internal network, is the only external network can directly reach the host, to ensure that the internal network from unauthorized external users of the attack.\\\textcircled{3} bastion host as the only accessible point to support the terminal interaction or as an application gateway agent.
+\item  Main methods in detection of computer viruses are : the virus signature code detection method, the file validation method, behavioral characteristics detection method, the software simulation method.
+\end{enumerate}
+
+
+
+
+18.Briefly describe the differences between viruses, worms, and Trojans.\\
+Answer:\\
+Firstly, viruses, Trojans and worms collectively referred to as computer viruses. Virus (including worms) is a common feature of self-replication, dissemination, destruction of computer files, causing irreversible damage to the computer data. The Trojan horse is the unique feature of disguised as a normal application to steal the user trust and invasion, lurking in the computer to steal users¡¯ information.
+\begin{enumerate}
+\item A virus is a code that a programmer inserts in a computer program to destroy a computer function or data. It can affect the normal use of computer ,and it can also copy a set of computer instructions or program code on its own.
+\item A Trojan horse also known as Trojan virus, which is through a specific program to control another computer. Unlike ordinary viruses, it¡¯s a kind of virus which do not self-propagate, and do not "deliberately" infect other files. They disguise themselves to attract the users to download and perform them.To provide Trojans to open the kind of host portals, which can be arbitrarily destroyed, stolen by the kinds of documents, and even remote control the infected hosts.
+\item Worm is a malicious program that can exploit a system vulnerability to propagate itself over the network. It does not need to be attached to other programs, but independent existence. When the formation of the scale, the propagation speed is too high will greatly consume network resources lead to a large area of network congestion or even paralysis.
+\end{enumerate}
+
+
+
+
+19.Please outline the relationship between the Trojan and the remote control program.\\
+Answer:\\
+Trojans and remote control software are both through the remote control function to control the target computer. In fact, the biggest difference between them is whether it is hidden. When the remote control software running on the server side, and the connection between client and server-side is successful,there will be a eye-catching sign appeared. However,When Trojans of the server-side software running in the application of various means to hide themselves, there never appear any signals for the tips.\\\\
+
+
+
+20.In an IPv4 packet, the size of the payload in the first fragment, in octets, is equal to Total Length - (4 * IHL). If this value is less than the required minimum (8 octets for TCP), then this fragment and the entire packet are rejected. Suggest an alternative method of achieving the same result using only the Fragment Offset field.
+Answer:\\
+When a TCP packet is fragmented so as to force interesting header fields out of the zero-offset fragment, there must exist a fragment with FO equal to 1. If a packet with FO = 1 is seen, conversely, it could indicate the presence, in the fragment set, of a zero-offset fragment with a transport header length of eight octets Discarding this one-offset fragment will block reassembly at the receiving host and be as effective as the direct method described above.\\\\
+
+
+
+
+
+\section{Cryptographic Checksums}
+\label{sec:checksums}
+
+
+\end{document}
